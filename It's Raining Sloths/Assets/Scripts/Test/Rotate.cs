@@ -13,7 +13,7 @@ public class Rotate : MonoBehaviour
     [SerializeField]
     int numberOfLanes;
     float rotationAngle;
-    
+    bool inRotation = false;
     //easing
     float x = 0.0f;
     bool up = true;
@@ -31,14 +31,16 @@ public class Rotate : MonoBehaviour
     {
         // Make it lane based!!!
         
-        if(Input.GetKeyDown(RotateLeft))
+        if(Input.GetKeyDown(RotateLeft) && !inRotation)
         {
             StartCoroutine(ChangeLane(-RotationSpeed));
+            inRotation = true;
         }
 
-        if(Input.GetKeyDown(RotateRight))
+        if(Input.GetKeyDown(RotateRight) && !inRotation)
         {
             StartCoroutine(ChangeLane(RotationSpeed));
+            inRotation = true;
         }
     }
 
@@ -51,6 +53,7 @@ public class Rotate : MonoBehaviour
             curAngel += Mathf.Abs(speed);
             yield return null;
         }
+        inRotation = false;
     }
 
     /*float GetCurSpeed()
