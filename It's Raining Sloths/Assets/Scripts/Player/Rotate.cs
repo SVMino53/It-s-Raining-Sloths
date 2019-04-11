@@ -33,12 +33,12 @@ public class Rotate : MonoBehaviour
         
         if(Input.GetKeyDown(RotateLeft))
         {
-            StartCoroutine(ChangeLane(-RotationSpeed));
+            StartCoroutine(ChangeLane(RotationSpeed));
         }
 
         if(Input.GetKeyDown(RotateRight))
         {
-            StartCoroutine(ChangeLane(RotationSpeed));
+            StartCoroutine(ChangeLane(-RotationSpeed));
         }
     }
 
