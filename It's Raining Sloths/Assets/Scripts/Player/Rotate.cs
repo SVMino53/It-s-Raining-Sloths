@@ -5,13 +5,13 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     [SerializeField]
-    KeyCode RotateLeft;
+    KeyCode RotateLeft = KeyCode.A;
     [SerializeField]
-    KeyCode RotateRight;
+    KeyCode RotateRight = KeyCode.D;
     [SerializeField]
-    float RotationSpeed;
+    float RotationSpeed = 1.0f;
     [SerializeField]
-    int numberOfLanes;
+    int numberOfLanes = 5;
     float rotationAngle;
     
     //easing

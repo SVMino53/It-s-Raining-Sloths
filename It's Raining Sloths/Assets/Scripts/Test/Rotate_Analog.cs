@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate_Old : MonoBehaviour
+public class Rotate_Analog : MonoBehaviour
 {
-    public KeyCode RotateLeft;
-    public KeyCode RotateRight;
-    public float RotationSpeed;
+    [SerializeField]
+    KeyCode RotateLeft = KeyCode.A;
+    [SerializeField]
+    KeyCode RotateRight = KeyCode.D;
+    [SerializeField]
+    public float RotationSpeed = 1.0f;
 
     // Update is called once per frame 
     void Update()

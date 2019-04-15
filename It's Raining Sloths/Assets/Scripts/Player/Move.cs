@@ -7,10 +7,11 @@ public class Move : MonoBehaviour
     [SerializeField]
     float speed = 0.01f;
     [SerializeField]
-    public KeyCode MoveUp;
+    public KeyCode MoveUp = KeyCode.W;
     [SerializeField]
-    public KeyCode MoveDown;
+    public KeyCode MoveDown = KeyCode.S;
     float initialXpos;
+
     // Start is called before the first frame update
     void Start()
     {
