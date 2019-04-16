@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class SpawnBranches : MonoBehaviour
 {
-    public Object BranchObj;
-    public float MinDistance;
-    public float MaxDistance;
-    public float MinHight;
-    public float MaxHight;
-    public int Lanes = 2;
-    public float LaneOffset = 0.0f;
+    [SerializeField]
+    Object BranchObj;
+    [SerializeField]
+    float MinDistance = 5.0f;
+    [SerializeField]
+    float MaxDistance = 15.0f;
+    [SerializeField]
+    float MinHight = 20.0f;
+    [SerializeField]
+    float MaxHight = 450.0f;
+    [SerializeField]
+    int Lanes = 5;
+    [SerializeField]
+    float LaneOffset = 0.0f;
 
     float BranchHight;
 

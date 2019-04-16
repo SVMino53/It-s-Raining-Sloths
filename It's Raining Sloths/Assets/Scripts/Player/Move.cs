@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     [SerializeField]
-    float speed = 0.01f;
+    float speed = 0.05f;
     [SerializeField]
     public KeyCode MoveUp = KeyCode.W;
     [SerializeField]
