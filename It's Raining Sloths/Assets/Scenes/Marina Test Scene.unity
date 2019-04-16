@@ -121,13 +121,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 246507093}
+  - component: {fileID: 246507095}
   - component: {fileID: 246507094}
   - component: {fileID: 246507097}
   - component: {fileID: 246507096}
   - component: {fileID: 246507095}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,14 +160,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 246507092}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbda12009e04a14d88c6fe8692c5665, type: 3}
+  m_Script: {fileID: 11500000, guid: 294617b2d1a3bb849b90342cb4083d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateLeft: 97
-  RotateRight: 100
-  RotationSpeed: 1
-  numberOfLanes: 0
-  curSpeed: 0
+  speed: 2
+  MoveUp: 119
+  MoveDown: 115
 --- !u!114 &246507095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,40 +175,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 246507092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880a499fc7a19224e85815db74b2e78f, type: 3}
+  m_Script: {fileID: 11500000, guid: f02ca84a9665b104384b1b22f5546faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RotateLeft: 97
   RotateRight: 100
-  RotationSpeed: 1
---- !u!114 &246507096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246507092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee6d5202434edb544a9178a1a4dd4344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.01
---- !u!114 &246507097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246507092}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294617b2d1a3bb849b90342cb4083d59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.01
-  MoveUp: 0
-  MoveDown: 0
+  RotationSpeed: 5
+  numberOfLanes: 5
 --- !u!1 &421080612
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 618511228}
   - component: {fileID: 618511229}
+  - component: {fileID: 618511230}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -352,6 +325,25 @@ MonoBehaviour:
   MaxHight: 450
   Lanes: 5
   LaneOffset: 0
+--- !u!114 &618511230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618511227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4363ad7ba7b526f4c9d0106ec6173567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BabySlothObj: {fileID: 6260658819545410470, guid: bcc600fc58433634e8f5b1ce7ef8c7da,
+    type: 3}
+  numberOfLanes: 5
+  DistanceFromPlayer: 30
+  spawnLane: 0
+  spawnRate: 1
+  slothLane: 0
 --- !u!1 &726397882
 GameObject:
   m_ObjectHideFlags: 0
