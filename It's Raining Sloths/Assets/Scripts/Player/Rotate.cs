@@ -34,18 +34,18 @@ public class Rotate : MonoBehaviour
     {
         // Make it lane based!!!
         
-        if(Input.GetKeyDown(RotateLeft) && !inRotation)
+        if(Input.GetKeyDown(RotateRight) && !inRotation)
         {
             StartCoroutine(ChangeLane(-RotationSpeed));
             inRotation = true;
-            curLane--;
+            curLane++;
         }
 
-        if(Input.GetKeyDown(RotateRight) && !inRotation)
+        if(Input.GetKeyDown(RotateLeft) && !inRotation)
         {
             StartCoroutine(ChangeLane(RotationSpeed));
             inRotation = true;
-            curLane++;
+            curLane--;
         }
 
         if (curLane < 0) curLane = numberOfLanes - 1;
