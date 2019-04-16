@@ -13,17 +13,20 @@ public class Rotate : MonoBehaviour
     [SerializeField]
     int numberOfLanes;
     float rotationAngle;
-    
+    bool inRotation = false;
     //easing
     float x = 0.0f;
     bool up = true;
 
-    public float curSpeed;
+    float curSpeed;
+    int curLane;
 
     // Start is called before the first frame update
     void Start()
     {
         rotationAngle = 360 / numberOfLanes;
+        curLane = 0;
+        
     }
 
     // Update is called once per frame
@@ -31,15 +34,22 @@ public class Rotate : MonoBehaviour
     {
         // Make it lane based!!!
         
-        if(Input.GetKeyDown(RotateLeft))
-        {
-            StartCoroutine(ChangeLane(RotationSpeed));
-        }
-
-        if(Input.GetKeyDown(RotateRight))
+        if(Input.GetKeyDown(RotateLeft) && !inRotation)
         {
             StartCoroutine(ChangeLane(-RotationSpeed));
+            inRotation = true;
+            curLane--;
         }
+
+        if(Input.GetKeyDown(RotateRight) && !inRotation)
+        {
+            StartCoroutine(ChangeLane(RotationSpeed));
+            inRotation = true;
+            curLane++;
+        }
+
+        if (curLane < 0) curLane = numberOfLanes - 1;
+        if (curLane == numberOfLanes) curLane = 0;
     }
 
     IEnumerator ChangeLane(float speed)
@@ -51,8 +61,13 @@ public class Rotate : MonoBehaviour
             curAngel += Mathf.Abs(speed);
             yield return null;
         }
+        inRotation = false;
     }
 
+    public int getCurLane()
+    {
+        return curLane;
+    }
     /*float GetCurSpeed()
     {
         x += 0.01f;
