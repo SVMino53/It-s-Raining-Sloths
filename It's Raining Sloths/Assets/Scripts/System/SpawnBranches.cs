@@ -7,14 +7,17 @@ public class SpawnBranches : MonoBehaviour
     [SerializeField]
     Object BranchObj;
     [SerializeField]
+    [Range(0.1f, 100.0f)]
     float MinDistance = 5.0f;
     [SerializeField]
+    [Range(0.2f, 100.0f)]
     float MaxDistance = 15.0f;
     [SerializeField]
     float MinHight = 20.0f;
     [SerializeField]
     float MaxHight = 450.0f;
     [SerializeField]
+    [Range(2, 100)]
     int Lanes = 5;
     [SerializeField]
     float LaneOffset = 0.0f;
@@ -45,11 +48,6 @@ public class SpawnBranches : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(Lanes < 2)
-        {
-            Lanes = 2;
-        }
-
         BranchHight = MinHight;
         SpawnBranch(-1);
     }
