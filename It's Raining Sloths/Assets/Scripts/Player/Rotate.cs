@@ -64,15 +64,8 @@ public class Rotate : MonoBehaviour
         inRotation = false;
     }
 
-    public int getCurLane()
+    public int GetCurLane()
     {
         return curLane;
     }
-    /*float GetCurSpeed()
-    {
-        x += 0.01f;
-        if (x >= 2*Mathf.PI) x = 0;
-        //if (Mathf.Sin(x) <= RotationSpeed/2)
-        return Mathf.Sin(x/2);
-    }*/
 }

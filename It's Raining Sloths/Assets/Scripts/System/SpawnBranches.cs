@@ -13,16 +13,16 @@ public class SpawnBranches : MonoBehaviour
     [Range(0.2f, 100.0f)]
     float MaxDistance = 15.0f;
     [SerializeField]
-    float MinHight = 20.0f;
+    float MinHeight = 20.0f;
     [SerializeField]
-    float MaxHight = 450.0f;
+    float MaxHeight = 450.0f;
     [SerializeField]
     [Range(2, 100)]
     int Lanes = 5;
     [SerializeField]
     float LaneOffset = 0.0f;
 
-    float BranchHight;
+    float BranchHeight;
 
     void SpawnBranch(int PrevLane)
     {
@@ -35,11 +35,11 @@ public class SpawnBranches : MonoBehaviour
 
         Quaternion BranchRotation = Quaternion.Euler(new Vector3(0.0f, 360.0f / Lanes * Lane + LaneOffset, 0.0f));
 
-        Instantiate<Object>(BranchObj, new Vector3(0.0f, BranchHight, 0.0f), BranchRotation);
+        Instantiate<Object>(BranchObj, new Vector3(0.0f, BranchHeight, 0.0f), BranchRotation);
+        
+        BranchHeight += Random.Range(MinDistance, MaxDistance);
 
-        BranchHight += Random.Range(MinDistance, MaxDistance);
-
-        if(BranchHight <= MaxHight)
+        if(BranchHeight <= MaxHeight)
         {
             SpawnBranch(Lane);
         }
@@ -48,7 +48,7 @@ public class SpawnBranches : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BranchHight = MinHight;
+        BranchHeight = MinHeight;
         SpawnBranch(-1);
     }
 

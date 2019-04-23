@@ -35,4 +35,9 @@ public class Move : MonoBehaviour
         /*if(Input.GetKey(KeyCode.A))
             transform.Rotate()*/
     }
+
+    public float getCurPosY()
+    {
+        return transform.position.y;
+    }
 }
