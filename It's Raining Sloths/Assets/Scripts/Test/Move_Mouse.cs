@@ -5,8 +5,14 @@ using UnityEngine;
 public class Move_Mouse : MonoBehaviour
 {
     [SerializeField]
+    [Range(0.0f, 2.0f)]
     public float speed = 0.1f;
     float initialXpos;
+
+    public void ChangeSpeed(float value)
+    {
+        speed = value;
+    }
 
     // Start is called before the first frame update
     void Start()

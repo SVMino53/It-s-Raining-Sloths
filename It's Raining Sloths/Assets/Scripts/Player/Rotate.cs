@@ -21,6 +21,11 @@ public class Rotate : MonoBehaviour
     float curSpeed;
     int curLane;
 
+    public void ChangeSpeed(float value)
+    {
+        RotationSpeed = value;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
