@@ -11,6 +11,11 @@ public class Rotate_Analog : MonoBehaviour
     [SerializeField]
     public float RotationSpeed = 1.0f;
 
+    public void ChangeSpeed(float value)
+    {
+        RotationSpeed = value;
+    }
+
     // Update is called once per frame 
     void Update()
     {

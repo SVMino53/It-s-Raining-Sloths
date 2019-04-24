@@ -37,7 +37,10 @@ public class Move : MonoBehaviour
     }
 
     public float getCurPosY()
+
     {
+
         return transform.position.y;
+
     }
 }
