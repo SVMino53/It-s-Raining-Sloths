@@ -6,8 +6,8 @@ public class Growing : MonoBehaviour
 {
     [SerializeField]
     float visibleHeight = 20;
-    [SerializeField]
-    float maxHeight = 400;
+
+    float maxHeight;
 
     float treeTopY;
     float treeHeight;
@@ -16,6 +16,7 @@ public class Growing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
         treeTopY = transform.lossyScale.y;
         treeHeight = treeTopY;
         player = GameObject.FindGameObjectWithTag("Player");

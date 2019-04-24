@@ -315,7 +315,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
-  isActive: 0
 --- !u!1 &585701227
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 585701228}
+  - component: {fileID: 585701229}
   m_Layer: 0
   m_Name: Trees
   m_TagString: Untagged
@@ -348,6 +348,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &585701229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585701227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df92167c83c3744f90eab501dc4eb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeHeight: 500
+  treePartHeight: 0.6
 --- !u!1 &618511227
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,17 +401,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618511227}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f88b8244c082764eba7ba1dfa0d5066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BranchObj: {fileID: 635151150309806996, guid: 14550ac9ff3b6b14b9189f16de23095e,
     type: 3}
-  MinDistance: 5
-  MaxDistance: 15
+  MinDistance: 12.1
+  MaxDistance: 24
   MinHeight: 20
-  MaxHeight: 450
+  MaxHeight: 0
   Lanes: 5
   LaneOffset: 0
 --- !u!114 &618511230
@@ -507,8 +521,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726397882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
-  m_LocalScale: {x: 2, y: 50, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 43, z: 2}
   m_Children: []
   m_Father: {fileID: 585701228}
   m_RootOrder: 0
@@ -542,7 +556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibleHeight: 20
-  maxHeight: 10000
 --- !u!1 &1160996478
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +685,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
-  isActive: 0
 --- !u!65 &1321959587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -843,7 +855,7 @@ Transform:
   m_GameObject: {fileID: 1695186708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 50, z: 2}
+  m_LocalScale: {x: 2, y: 43, z: 2}
   m_Children: []
   m_Father: {fileID: 585701228}
   m_RootOrder: 1
@@ -861,7 +873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibleHeight: 20
-  maxHeight: 10000
 --- !u!54 &1695186711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1042,7 +1053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
-  isActive: 0
 --- !u!1 &1913625665
 GameObject:
   m_ObjectHideFlags: 0
