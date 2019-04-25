@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FOV_Value : MonoBehaviour
 {
     [SerializeField]
-    GameObject SliderObj;
+    GameObject SliderObj = null;
 
     Slider ValueSlider;
     float Value;

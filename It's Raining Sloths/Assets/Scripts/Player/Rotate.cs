@@ -15,8 +15,8 @@ public class Rotate : MonoBehaviour
     float rotationAngle;
     bool inRotation = false;
     //easing
-    float x = 0.0f;
-    bool up = true;
+    //float x = 0.0f;
+    //bool up = true;
 
     float curSpeed;
     int curLane;

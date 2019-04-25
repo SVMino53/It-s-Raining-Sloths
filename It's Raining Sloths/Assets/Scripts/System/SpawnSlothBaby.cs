@@ -5,12 +5,16 @@ using UnityEngine;
 public class SpawnSlothBaby : MonoBehaviour
 {
     [SerializeField]
-    GameObject BabySlothObj;
+    GameObject BabySlothObj = null;
     [SerializeField]
     int numberOfLanes = 5;
     [SerializeField]
     float DistanceFromPlayer = 20;
-   
+    [SerializeField]
+    string TreesName = "Trees";
+    [SerializeField]
+    string PlayerTag = "Player";
+
     [SerializeField]
     float spawnRate = 1;
 
@@ -27,8 +31,8 @@ public class SpawnSlothBaby : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
-        treeHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
-        sloth = GameObject.FindGameObjectWithTag("Player");
+        treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        sloth = GameObject.FindGameObjectWithTag(PlayerTag);
         slothLane = sloth.GetComponent<Rotate>().GetCurLane();
         startTime = Time.time;
     }
@@ -46,14 +50,17 @@ public class SpawnSlothBaby : MonoBehaviour
     {
         if (Time.time - startTime >= spawnRate)
         {
-            slothLane = sloth.GetComponent<Rotate>().GetCurLane();
-            spawnLane = slothLane + Random.Range(-1, 2);
+            if (sloth != null)
+            {
+                slothLane = sloth.GetComponent<Rotate>().GetCurLane();
+                spawnLane = slothLane + Random.Range(-1, 2);
 
-            if (spawnLane < 0) spawnLane = numberOfLanes - 1;
-            if (spawnLane == numberOfLanes) spawnLane = 0;
+                if (spawnLane < 0) spawnLane = numberOfLanes - 1;
+                if (spawnLane == numberOfLanes) spawnLane = 0;
 
-            if(sloth.transform.position.y <= treeHeight)
-                SpawnSloth(spawnLane);
+                if (sloth.transform.position.y <= treeHeight)
+                    SpawnSloth(spawnLane);
+            }
 
             startTime = Time.time;
         }

@@ -8,11 +8,14 @@ public class TreeTopPosition : MonoBehaviour
     float treeHeight;
     [SerializeField]
     Vector3 treePosition;
+    [SerializeField]
+    string TreesName = "Trees";
+
     // Start is called before the first frame update
     void Start()
     {
-        treeHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
-        treePosition = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreePosition();
+        treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        treePosition = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreePosition();
         transform.position = new Vector3(treePosition.x, treeHeight, treePosition.z);
     }
 
