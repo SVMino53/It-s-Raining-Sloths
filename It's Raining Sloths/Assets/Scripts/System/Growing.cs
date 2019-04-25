@@ -28,7 +28,7 @@ public class Growing : MonoBehaviour
         if(player!=null)
             playerCurPosY = player.GetComponent<Move>().getCurPosY();
 
-        if(playerCurPosY >= treeTopY - visibleHeight && treeTopY<maxHeight)
+        if(playerCurPosY >= treeTopY - visibleHeight && treeTopY<maxHeight-treeHeight)
         {
             RepositionTree();
             treeTopY += treeHeight;
