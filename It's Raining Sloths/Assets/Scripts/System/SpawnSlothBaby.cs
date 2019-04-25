@@ -7,17 +7,15 @@ public class SpawnSlothBaby : MonoBehaviour
     [SerializeField]
     GameObject BabySlothObj;
     [SerializeField]
-    int numberOfLanes;
+    int numberOfLanes = 5;
     [SerializeField]
-    float DistanceFromPlayer;
+    float DistanceFromPlayer = 20;
     [SerializeField]
-    int spawnLane;
-    [SerializeField]
-    float spawnRate;
+    float spawnRate = 1;
 
     float startTime;
-
-    [SerializeField]
+    
+    int spawnLane;
     int slothLane;
     GameObject sloth;
 
