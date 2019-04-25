@@ -15,6 +15,7 @@ public class SpawnSlothBaby : MonoBehaviour
     float spawnRate = 1;
 
     float startTime;
+    
     int spawnLane;
     int slothLane;
     float testRotation;

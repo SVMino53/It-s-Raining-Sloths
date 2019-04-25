@@ -19,8 +19,6 @@ public class Rotate_Analog : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        // Make it lane based!!! 
-
         if (Input.GetKey(RotateLeft))
         {
             transform.Rotate(0, RotationSpeed, 0);

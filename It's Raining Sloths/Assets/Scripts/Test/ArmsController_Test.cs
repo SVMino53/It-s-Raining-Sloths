@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmsController : MonoBehaviour
+public class ArmsController_Test : MonoBehaviour
 {
     [SerializeField]
     KeyCode CatchLeft = KeyCode.O;
@@ -26,6 +26,9 @@ public class ArmsController : MonoBehaviour
         rightArm = GameObject.Find(RightArmName);
         leftArm = GameObject.Find(LeftArmName);
         timer = Time.time;
+
+        rightArm.SetActive(false);
+        leftArm.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,23 +36,23 @@ public class ArmsController : MonoBehaviour
     {
         if (Input.GetKeyDown(CatchRight) && armActive == false)
         {
-            rightArm.GetComponent<CatchDetection>().SetActive(true);
+            rightArm.SetActive(true);
             armActive = true;
         }
 
         if (Input.GetKeyDown(CatchLeft) && armActive == false)
         {
-            leftArm.GetComponent<CatchDetection>().SetActive(true);
+            leftArm.SetActive(true);
             armActive = true;
         }
 
         if (Time.time - timer >= activePhaseLength)
         {
-            if (leftArm.GetComponent<CatchDetection>().GetActiveStatus())
-                leftArm.GetComponent<CatchDetection>().SetActive(false);
+            if (leftArm.activeInHierarchy)
+                leftArm.SetActive(false);
 
-            if (rightArm.GetComponent<CatchDetection>().GetActiveStatus())
-                rightArm.GetComponent<CatchDetection>().SetActive(false);
+            if (rightArm.activeInHierarchy)
+                rightArm.SetActive(false);
 
             armActive = false;
             timer = Time.time;

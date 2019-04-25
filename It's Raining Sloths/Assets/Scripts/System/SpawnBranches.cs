@@ -22,7 +22,7 @@ public class SpawnBranches : MonoBehaviour
     [SerializeField]
     float LaneOffset = 0.0f;
     [SerializeField]
-    string TreesName;
+    string TreesName = "Trees";
 
     float BranchHeight;
 
