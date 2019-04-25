@@ -21,6 +21,8 @@ public class SpawnBranches : MonoBehaviour
     int Lanes = 5;
     [SerializeField]
     float LaneOffset = 0.0f;
+    [SerializeField]
+    string TreesName;
 
     float BranchHeight;
 
@@ -49,7 +51,7 @@ public class SpawnBranches : MonoBehaviour
     void Start()
     {
         BranchHeight = MinHeight;
-        MaxHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
+        MaxHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
         SpawnBranch(-1);
         
     }

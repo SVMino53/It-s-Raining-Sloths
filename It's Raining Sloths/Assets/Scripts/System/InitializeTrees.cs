@@ -8,13 +8,16 @@ public class InitializeTrees : MonoBehaviour
 {
     GameObject[] treeParts;
     [SerializeField]
-    float treeHeight;
+    float treeHeight = 500.0f;
     [SerializeField]
-    float treePartHeight;
+    float treePartHeight = 10.0f;
+    [SerializeField]
+    string TreeTag;
+
     // Start is called before the first frame update
     void Start()
     {
-        treeParts = GameObject.FindGameObjectsWithTag("Tree");
+        treeParts = GameObject.FindGameObjectsWithTag(TreeTag);
         if(treeParts[0]!=null)
             treePartHeight = treeParts[0].transform.lossyScale.y;
 
