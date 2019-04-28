@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class TreeTopPosition : MonoBehaviour
 {
-    [SerializeField]
     float treeHeight;
-    [SerializeField]
     Vector3 treePosition;
     // Start is called before the first frame update
     void Start()
