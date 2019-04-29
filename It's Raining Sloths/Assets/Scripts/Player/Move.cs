@@ -6,7 +6,7 @@ public class Move : MonoBehaviour
 {
     [SerializeField]
     [Range(0.0f, 2.0f)]
-    public float speed = 0.05f;
+    public float speed = 20.05f;
     [SerializeField]
     public KeyCode MoveUp = KeyCode.W;
     [SerializeField]
@@ -15,9 +15,14 @@ public class Move : MonoBehaviour
     string TreesName = "Trees";
 
     float initialXpos;
+    float initialZpos;
     float treeHeight;
     [SerializeField]
     bool moving = true;
+    [SerializeField]
+    float BounceDownHeight = 10f;
+    [SerializeField]
+    float StannedLength = 0.3f;
 
     /*...........*/
     Rigidbody rb;
@@ -25,31 +30,76 @@ public class Move : MonoBehaviour
     public void ChangeSpeed(float value)
     {
         speed = value;
-        rb = GetComponent<Rigidbody>();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         initialXpos = transform.position.x;
-        treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        initialZpos = transform.position.z;
+        treeHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(initialXpos, transform.position.y, initialZpos);
+        if(GetComponent<CollisionCheck>().Colliding() && moving)
+        {
+            BounceDown();
+        }
         if (moving)
         {
             if (Input.GetKey(MoveUp) && transform.position.y + speed <= treeHeight)
-                //rb.velocity = new Vector3(0, speed, 0);
+            {
                 transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
+            }
             else if (Input.GetKey(MoveDown) && transform.position.y - speed >= initialXpos)
                 transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
-        } //else moving = true;
+        } 
     }
 
-    public float getCurPosY()
+    public float GetCurPosY()
     {
         return transform.position.y;
+    }
+
+    public void BounceDown()
+    {
+        moving = false;
+        StartCoroutine(Falling());
+    }
+
+    IEnumerator Falling()
+    {
+        float curHeight = 0;
+        float localSpeed = speed;
+        while (curHeight <= BounceDownHeight)
+        {
+            localSpeed = getSpeed(speed);
+            if (transform.position.y - localSpeed >= 0)
+                transform.position = new Vector3(transform.position.x, transform.position.y - localSpeed, transform.position.z);
+            else
+            {
+                moving = true;
+                yield break;
+            }
+            curHeight += localSpeed;
+            yield return null;
+        }
+        StartCoroutine(Waiting());
+    }
+
+    IEnumerator Waiting()
+    {
+        yield return new WaitForSeconds(StannedLength);
+        moving = true;
+    }
+
+    float getSpeed(float curSpeed)
+    {
+        return curSpeed *= (0.7f+Mathf.Abs(Mathf.Cos(Time.time)));
     }
 }

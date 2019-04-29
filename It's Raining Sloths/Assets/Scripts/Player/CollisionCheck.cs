@@ -8,6 +8,7 @@ public class CollisionCheck : MonoBehaviour
     public LayerMask m_LayerMask;
     Collider myCollider;
     float radius = 10f;
+    bool colliding = false;
 
     [SerializeField] int collisionBuffer = 10;
 
@@ -16,7 +17,6 @@ public class CollisionCheck : MonoBehaviour
     {
         m_Started = true;
         myCollider = GetComponent<Collider>();
-       // radius = transform.localScale.y;
     }
 
     void FixedUpdate()
@@ -31,7 +31,7 @@ public class CollisionCheck : MonoBehaviour
 
         Collider[] outHitColliders = new Collider[collisionBuffer];
         int count = Physics.OverlapBoxNonAlloc(myCollider.bounds.center, myCollider.bounds.size / 2, outHitColliders);
-        Debug.Log(count);
+
 
         for (int i = 0; i < count; ++i)
         {
@@ -40,9 +40,8 @@ public class CollisionCheck : MonoBehaviour
             if (collider == myCollider)
                 continue;
 
-            if (collider.gameObject.CompareTag("Branch") /*&& collider.gameObject.transform.position.y >= transform.position.y*/)
+            if (collider.gameObject.CompareTag("Branch") && collider.transform.position.y  >= myCollider.transform.position.y)
             {
-                Debug.Log("Hitting branch");
                 Vector3 otherPosition = collider.transform.position;
                 Quaternion otherRotation = collider.transform.rotation;
 
@@ -58,11 +57,15 @@ public class CollisionCheck : MonoBehaviour
                 {
                     transform.position += direction * distance;
                 }
-
-                if (overlapped) Debug.Log("HIT");
+                colliding = overlapped;
             }
         }
 
+    }
+
+    public bool Colliding()
+    {
+        return colliding;
     }
 }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1913625666}
-  m_IndirectSpecularColor: {r: 0.55144674, g: 0.5119535, b: 0.51974016, a: 1}
+  m_IndirectSpecularColor: {r: 0.67413634, g: 0.6547998, b: 0.5908016, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 246507095}
   - component: {fileID: 246507100}
   - component: {fileID: 246507099}
+  - component: {fileID: 246507101}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -544,6 +545,8 @@ MonoBehaviour:
   speed: 0.2
   MoveUp: 119
   MoveDown: 115
+  moving: 1
+  BounceDownHeight: 10
 --- !u!114 &246507098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,6 +590,22 @@ MonoBehaviour:
   activePhaseLength: 5
   LeftArmName: Detector_Left
   RightArmName: Detector_Right
+--- !u!114 &246507101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246507092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec0949aa849e9d498b9887ec4180ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  collisionBuffer: 10
 --- !u!1 &295457232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1402,7 @@ MonoBehaviour:
   MaxHeight: 0
   Lanes: 5
   LaneOffset: 0
-  TreesName: TreeParts
+  TreesName: Trees
 --- !u!114 &618511230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,7 +1434,7 @@ MonoBehaviour:
     type: 3}
   numberOfLanes: 5
   DistanceFromPlayer: 20
-  TreesName: TreeParts
+  TreesName: Trees
   PlayerTag: Player
   spawnRate: 1
   treeHeight: 500
@@ -1676,7 +1695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibleHeight: 50
-  TreesName: TreeParts
+  TreesName: Trees
   PlayerTag: Player
 --- !u!1 &761470665
 GameObject:
@@ -2468,7 +2487,7 @@ GameObject:
   - component: {fileID: 1294069031}
   - component: {fileID: 1294069030}
   m_Layer: 0
-  m_Name: TreeParts
+  m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2842,7 +2861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibleHeight: 50
-  TreesName: TreeParts
+  TreesName: Trees
   PlayerTag: Player
 --- !u!1 &1415774927
 GameObject:
@@ -2876,9 +2895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2730d1a4c176cd844afefdf0fba227ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeHeight: 0
-  treePosition: {x: 0, y: 0, z: 0}
-  TreesName: TreeParts
 --- !u!135 &1415774929
 SphereCollider:
   m_ObjectHideFlags: 0
