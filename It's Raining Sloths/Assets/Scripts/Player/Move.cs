@@ -11,6 +11,8 @@ public class Move : MonoBehaviour
     public KeyCode MoveUp = KeyCode.W;
     [SerializeField]
     public KeyCode MoveDown = KeyCode.S;
+    [SerializeField]
+    string TreesName = "Trees";
 
     float initialXpos;
     float treeHeight;
@@ -30,7 +32,7 @@ public class Move : MonoBehaviour
     void Start()
     {
         initialXpos = transform.position.x;
-        treeHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
+        treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
     }
 
     // Update is called once per frame

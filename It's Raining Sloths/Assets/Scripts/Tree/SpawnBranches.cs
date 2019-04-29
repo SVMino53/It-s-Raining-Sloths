@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnBranches : MonoBehaviour
 {
     [SerializeField]
-    Object BranchObj;
+    GameObject BranchObj;
     [SerializeField]
     [Range(0.1f, 100.0f)]
     float MinDistance = 5.0f;
@@ -15,7 +15,9 @@ public class SpawnBranches : MonoBehaviour
     [SerializeField]
     float MinHeight = 20.0f;
     [SerializeField]
-    float MaxHeight = 0;
+    float MaxHeight = 450.0f;
+    [SerializeField]
+    Vector3 PositionOffset = new Vector3(0.0f, 0.0f, 0.0f);
     [SerializeField]
     [Range(2, 100)]
     int Lanes = 5;
@@ -37,7 +39,11 @@ public class SpawnBranches : MonoBehaviour
 
         Quaternion BranchRotation = Quaternion.Euler(new Vector3(0.0f, 360.0f / Lanes * Lane + LaneOffset, 0.0f));
 
-        Instantiate<Object>(BranchObj, new Vector3(0.0f, BranchHeight, 0.0f), BranchRotation);
+        GameObject NewBranch = Instantiate<GameObject>(BranchObj, new Vector3(0.0f, BranchHeight, 0.0f), BranchRotation);
+
+        Vector3 NewPosition = NewBranch.transform.TransformPoint(NewBranch.transform.localPosition + PositionOffset);
+
+        NewBranch.transform.position = NewPosition;
         
         BranchHeight += Random.Range(MinDistance, MaxDistance);
 
@@ -53,11 +59,5 @@ public class SpawnBranches : MonoBehaviour
         BranchHeight = MinHeight;
         MaxHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
         SpawnBranch(-1);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

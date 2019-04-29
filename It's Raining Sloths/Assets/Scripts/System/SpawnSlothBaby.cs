@@ -58,14 +58,15 @@ public class SpawnSlothBaby : MonoBehaviour
                 if (spawnLane < 0) spawnLane = numberOfLanes - 1;
                 if (spawnLane == numberOfLanes) spawnLane = 0;
 
-            if (sloth.transform.position.y > treeHeight - DistanceFromPlayer)
-                Destroy(this);
+                if (sloth.transform.position.y > treeHeight - DistanceFromPlayer)
+                    Destroy(this);
 
-            SpawnSloth(spawnLane);
+                SpawnSloth(spawnLane);
 
-            startTime = Time.time;
+                startTime = Time.time;
+            }
+
+            //delete / get back to pool if sloth falls 
         }
-
-        //delete / get back to pool if sloth falls 
     }
 }
