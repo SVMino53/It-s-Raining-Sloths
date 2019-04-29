@@ -5,7 +5,7 @@ using UnityEngine;
 public class Toggle_CameraView : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] Cameras;
+    GameObject[] Cameras = null;
     [SerializeField]
     KeyCode Toggle = KeyCode.C;
 

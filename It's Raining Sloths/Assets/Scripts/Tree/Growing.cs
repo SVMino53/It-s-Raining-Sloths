@@ -6,6 +6,10 @@ public class Growing : MonoBehaviour
 {
     [SerializeField]
     float visibleHeight = 20;
+    [SerializeField]
+    string TreesName = "Trees";
+    [SerializeField]
+    string PlayerTag = "Player";
 
     float maxHeight;
 
@@ -16,10 +20,10 @@ public class Growing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
+        maxHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
         treeTopY = transform.lossyScale.y;
         treeHeight = treeTopY;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag(PlayerTag);
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Toggle_Climbing : MonoBehaviour
 {
     [SerializeField]
-    GameObject PlayerObj;
+    GameObject PlayerObj = null;
     [SerializeField]
     KeyCode Toggle = KeyCode.V;
 

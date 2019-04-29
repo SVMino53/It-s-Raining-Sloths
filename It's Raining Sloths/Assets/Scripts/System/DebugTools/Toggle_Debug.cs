@@ -5,9 +5,9 @@ using UnityEngine;
 public class Toggle_Debug : MonoBehaviour
 {
     [SerializeField]
-    GameObject GameCanvas;
+    GameObject GameCanvas = null;
     [SerializeField]
-    GameObject DebugCanvas;
+    GameObject DebugCanvas = null;
     [SerializeField]
     public KeyCode Toggle = KeyCode.H;
 

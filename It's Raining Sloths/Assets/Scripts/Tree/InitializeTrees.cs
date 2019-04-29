@@ -12,7 +12,7 @@ public class InitializeTrees : MonoBehaviour
     [SerializeField]
     float treePartHeight = 10.0f;
     [SerializeField]
-    string TreeTag;
+    string TreeTag = "Tree";
 
     // Start is called before the first frame update
     void Start()
