@@ -11,6 +11,7 @@ public class CollisionCheck : MonoBehaviour
     bool colliding = false;
 
     [SerializeField] int collisionBuffer = 10;
+    [SerializeField]
 
 
     void Start()
@@ -32,7 +33,6 @@ public class CollisionCheck : MonoBehaviour
         Collider[] outHitColliders = new Collider[collisionBuffer];
         int count = Physics.OverlapBoxNonAlloc(myCollider.bounds.center, myCollider.bounds.size / 2, outHitColliders);
 
-
         for (int i = 0; i < count; ++i)
         {
             Collider collider = outHitColliders[i];
@@ -53,6 +53,7 @@ public class CollisionCheck : MonoBehaviour
                     collider, otherPosition, otherRotation,
                     out direction, out distance
                 );
+
                 if (overlapped)
                 {
                     transform.position += direction * distance;
@@ -60,7 +61,6 @@ public class CollisionCheck : MonoBehaviour
                 colliding = overlapped;
             }
         }
-
     }
 
     public bool Colliding()

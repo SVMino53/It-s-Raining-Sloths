@@ -15,7 +15,7 @@ public class SpawnBranches : MonoBehaviour
     [SerializeField]
     float MinHeight = 20.0f;
     [SerializeField]
-    float MaxHeight = 450.0f;
+    float MaxHeight = 10.0f;
     [SerializeField]
     Vector3 PositionOffset = new Vector3(0.0f, 0.0f, 0.0f);
     [SerializeField]

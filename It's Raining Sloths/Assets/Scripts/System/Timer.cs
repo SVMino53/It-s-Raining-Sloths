@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Timer : MonoBehaviour
     { 
         if(Time.time - startTime>=levelLength && !playerReachedTheTop)
         {
-            //you lost
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         } else {
             time.text = ((int)levelLength - ((int)(Time.time - startTime))).ToString();
         }
