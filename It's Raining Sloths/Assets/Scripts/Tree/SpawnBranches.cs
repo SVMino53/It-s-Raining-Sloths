@@ -41,9 +41,9 @@ public class SpawnBranches : MonoBehaviour
 
         GameObject NewBranch = Instantiate<GameObject>(BranchObj, new Vector3(0.0f, BranchHeight, 0.0f), BranchRotation);
 
-        Vector3 NewPosition = NewBranch.transform.TransformPoint(NewBranch.transform.localPosition + PositionOffset);
+        //Vector3 NewPosition = NewBranch.transform.TransformPoint(NewBranch.transform.localPosition + PositionOffset);
 
-        NewBranch.transform.position = NewPosition;
+        //NewBranch.transform.position = NewPosition;
         
         BranchHeight += Random.Range(MinDistance, MaxDistance);
 
