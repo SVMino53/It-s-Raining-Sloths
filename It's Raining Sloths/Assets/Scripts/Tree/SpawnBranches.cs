@@ -25,8 +25,11 @@ public class SpawnBranches : MonoBehaviour
     float LaneOffset = 0.0f;
     [SerializeField]
     string TreesName = "Trees";
+    [SerializeField]
+    GameObject[] branchPrefabs;
 
     float BranchHeight;
+    int branchTypeNum = 0;
 
     void SpawnBranch(int PrevLane)
     {
@@ -39,7 +42,11 @@ public class SpawnBranches : MonoBehaviour
 
         Quaternion BranchRotation = Quaternion.Euler(new Vector3(0.0f, 360.0f / Lanes * Lane + LaneOffset, 0.0f));
 
-        GameObject NewBranch = Instantiate<GameObject>(BranchObj, new Vector3(0.0f, BranchHeight, 0.0f), BranchRotation);
+        if (branchPrefabs.Length > 0)
+            branchTypeNum = Random.Range(0, branchPrefabs.Length);
+        else return;
+
+        GameObject NewBranch = Instantiate<GameObject>(branchPrefabs[branchTypeNum], new Vector3(0.0f, BranchHeight, 0.0f), BranchRotation);
 
         //Vector3 NewPosition = NewBranch.transform.TransformPoint(NewBranch.transform.localPosition + PositionOffset);
 
