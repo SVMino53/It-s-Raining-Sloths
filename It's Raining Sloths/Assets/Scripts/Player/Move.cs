@@ -39,7 +39,7 @@ public class Move : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         initialXpos = transform.position.x;
         initialZpos = transform.position.z;
-        treeHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
+        treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
     }
 
     // Update is called once per frame
