@@ -10,10 +10,11 @@ public class Growing : MonoBehaviour
     string TreesName = "Trees";
     [SerializeField]
     string PlayerTag = "Player";
-
+    [SerializeField]
     float maxHeight;
 
     float treeTopY;
+    
     float treeHeight;
     float playerCurPosY;
     GameObject player;
@@ -32,7 +33,7 @@ public class Growing : MonoBehaviour
         if(player!=null)
             playerCurPosY = player.GetComponent<Move>().GetCurPosY();
 
-        if(playerCurPosY >= treeTopY - visibleHeight && treeTopY<maxHeight-treeHeight)
+        if(playerCurPosY >= treeTopY  && treeTopY<maxHeight-treeHeight)
         {
             RepositionTree();
             treeTopY += treeHeight;
