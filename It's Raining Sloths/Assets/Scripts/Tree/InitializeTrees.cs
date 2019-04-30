@@ -18,16 +18,16 @@ public class InitializeTrees : MonoBehaviour
     void Start()
     {
         treeParts = GameObject.FindGameObjectsWithTag(TreeTag);
-        if(treeParts[0]!=null)
+        if(treeParts[0] != null)
             treePartHeight = treeParts[0].transform.lossyScale.y;
 
         if(treeParts.Length == 2)
         {
-            treeParts[0].transform.position = new Vector3(transform.position.x, -treePartHeight, transform.position.z);
-            treeParts[1].transform.position = new Vector3(treeParts[0].transform.position.x, treePartHeight, treeParts[0].transform.position.z);
+            treeParts[0].transform.position = new Vector3(transform.position.x, transform.position.y - treePartHeight, transform.position.z);
+            treeParts[1].transform.position = new Vector3(treeParts[0].transform.position.x, treeParts[0].transform.position.y + treePartHeight, treeParts[0].transform.position.z);
         }
 
-        if(treeHeight%treePartHeight!=0 && treePartHeight!=0)
+        if(treeHeight % treePartHeight != 0 && treePartHeight != 0)
         {
             treeHeight = treePartHeight * ((int)(treeHeight / treePartHeight)-1);
         }
