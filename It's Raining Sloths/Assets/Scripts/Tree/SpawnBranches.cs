@@ -5,8 +5,6 @@ using UnityEngine;
 public class SpawnBranches : MonoBehaviour
 {
     [SerializeField]
-    GameObject BranchObj;
-    [SerializeField]
     [Range(0.1f, 100.0f)]
     float MinDistance = 5.0f;
     [SerializeField]
@@ -46,11 +44,7 @@ public class SpawnBranches : MonoBehaviour
             branchTypeNum = Random.Range(0, branchPrefabs.Length);
         else return;
 
-        GameObject NewBranch = Instantiate<GameObject>(branchPrefabs[branchTypeNum], new Vector3(0.0f, BranchHeight, 0.0f), BranchRotation);
-
-        //Vector3 NewPosition = NewBranch.transform.TransformPoint(NewBranch.transform.localPosition + PositionOffset);
-
-        //NewBranch.transform.position = NewPosition;
+        GameObject NewBranch = Instantiate<GameObject>(branchPrefabs[branchTypeNum], new Vector3(transform.position.x, BranchHeight, transform.position.z), BranchRotation);
         
         BranchHeight += Random.Range(MinDistance, MaxDistance);
 

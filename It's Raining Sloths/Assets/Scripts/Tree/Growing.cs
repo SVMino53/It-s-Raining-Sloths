@@ -14,9 +14,9 @@ public class Growing : MonoBehaviour
     float maxHeight;
 
     float treeTopY;
-    
     float treeHeight;
     float playerCurPosY;
+    float minHeight;
     GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -33,8 +33,9 @@ public class Growing : MonoBehaviour
         if(player!=null)
             playerCurPosY = player.GetComponent<Move>().GetCurPosY();
 
-        if(playerCurPosY >= treeTopY  && treeTopY<maxHeight-treeHeight)
+        if(playerCurPosY >= treeTopY + treeHeight*0.5  && treeTopY<maxHeight-treeHeight)
         {
+            minHeight = treeTopY;
             RepositionTree();
             treeTopY += treeHeight;
         }
@@ -44,6 +45,11 @@ public class Growing : MonoBehaviour
     {
         Vector3 treeOffset = new Vector3(0, treeHeight, 0);
         transform.position = transform.position + treeOffset;
+    }
+
+    public float GetMinHeight()
+    {
+        return minHeight;
     }
 
 }

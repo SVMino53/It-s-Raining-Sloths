@@ -10,6 +10,11 @@ public class Rotate_Analog : MonoBehaviour
     KeyCode RotateRight = KeyCode.D;
     [SerializeField]
     public float RotationSpeed = 1.0f;
+    [SerializeField]
+    int numOfLanes = 5;
+
+    float rotationAngle = 0;
+    int curLane;
 
     public void ChangeSpeed(float value)
     {
@@ -22,11 +27,25 @@ public class Rotate_Analog : MonoBehaviour
         if (Input.GetKey(RotateLeft))
         {
             transform.Rotate(0, RotationSpeed, 0);
+            rotationAngle += RotationSpeed;
         }
 
         if (Input.GetKey(RotateRight))
         {
             transform.Rotate(0, -RotationSpeed, 0);
+            rotationAngle -= RotationSpeed;
         }
+
+        if (rotationAngle > 360) rotationAngle = 0;
+        if (rotationAngle < 0) rotationAngle = 360;
+
+        curLane = (int)(rotationAngle/ (360/numOfLanes));
+    }
+    public int GetCurLane()
+    {
+        return curLane;
     }
 }
+
+
+ 

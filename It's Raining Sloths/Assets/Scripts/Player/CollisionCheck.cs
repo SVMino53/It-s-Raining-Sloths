@@ -11,8 +11,6 @@ public class CollisionCheck : MonoBehaviour
     bool colliding = false;
 
     [SerializeField] int collisionBuffer = 10;
-    [SerializeField]
-
 
     void Start()
     {
@@ -40,7 +38,7 @@ public class CollisionCheck : MonoBehaviour
             if (collider == myCollider)
                 continue;
 
-            if (collider.gameObject.CompareTag("Branch") && collider.transform.position.y  >= myCollider.transform.position.y)
+            if (collider.gameObject.CompareTag("Branch") && collider.transform.position.y >= myCollider.transform.position.y)
             {
                 Vector3 otherPosition = collider.transform.position;
                 Quaternion otherRotation = collider.transform.rotation;
@@ -66,6 +64,11 @@ public class CollisionCheck : MonoBehaviour
     public bool Colliding()
     {
         return colliding;
+    }
+
+    public void SetColliding(bool bl)
+    {
+        colliding = bl;
     }
 }
 

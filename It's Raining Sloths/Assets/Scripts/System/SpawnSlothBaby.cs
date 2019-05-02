@@ -52,7 +52,9 @@ public class SpawnSlothBaby : MonoBehaviour
         {
             if (sloth != null)
             {
-                slothLane = sloth.GetComponent<Rotate>().GetCurLane();
+                if (sloth.GetComponent<Rotate>().isActiveAndEnabled)
+                    slothLane = sloth.GetComponent<Rotate>().GetCurLane();
+                else slothLane = sloth.GetComponent<Rotate_Analog>().GetCurLane();
                 spawnLane = slothLane + Random.Range(-1, 2);
 
                 if (spawnLane < 0) spawnLane = numberOfLanes - 1;

@@ -18,14 +18,14 @@ public class Move : MonoBehaviour
     float initialZpos;
     float treeHeight;
     [SerializeField]
-    bool moving = true;
+    public bool moving = true;
     [SerializeField]
     float BounceDownHeight = 10f;
     [SerializeField]
     float StannedLength = 0.3f;
 
     /*...........*/
-    Rigidbody rb;
+    public float minHeight;
 
     public void ChangeSpeed(float value)
     {
@@ -36,7 +36,6 @@ public class Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         initialXpos = transform.position.x;
         initialZpos = transform.position.z;
         treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
@@ -46,16 +45,17 @@ public class Move : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(initialXpos, transform.position.y, initialZpos);
+        if (GetComponent<CollisionCheck>().Colliding())
+            Debug.Log("colliding");
         if(GetComponent<CollisionCheck>().Colliding() && moving)
         {
             BounceDown();
+            GetComponent<CollisionCheck>().SetColliding(false);
         }
         if (moving)
         {
             if (Input.GetKey(MoveUp) && transform.position.y + speed <= treeHeight)
-            {
                 transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
-            }
             else if (Input.GetKey(MoveDown) && transform.position.y - speed >= initialXpos)
                 transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
         } 
@@ -68,6 +68,7 @@ public class Move : MonoBehaviour
 
     public void BounceDown()
     {
+        
         moving = false;
         StartCoroutine(Falling());
     }
@@ -76,10 +77,12 @@ public class Move : MonoBehaviour
     {
         float curHeight = 0;
         float localSpeed = speed;
+        minHeight = GameObject.FindGameObjectWithTag("Tree").GetComponent<Growing>().GetMinHeight();
+
         while (curHeight <= BounceDownHeight)
         {
             localSpeed = getSpeed(speed);
-            if (transform.position.y - localSpeed >= 0)
+            if (transform.position.y - localSpeed >= 0 && transform.position.y - localSpeed >= minHeight)
                 transform.position = new Vector3(transform.position.x, transform.position.y - localSpeed, transform.position.z);
             else
             {
