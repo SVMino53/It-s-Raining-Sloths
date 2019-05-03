@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     float levelLength;
     [SerializeField]
     Text time;
+    [SerializeField]
+    float waitingTime = 13;
 
     bool playerReachedTheTop = false;
     // Start is called before the first frame update
@@ -24,9 +26,21 @@ public class Timer : MonoBehaviour
     { 
         if(Time.time - startTime>=levelLength && !playerReachedTheTop)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().countPoints(GetTimeLeft());
+            StartCoroutine(Wait());
         } else {
             time.text = ((int)levelLength - ((int)(Time.time - startTime))).ToString();
         }
+    }
+
+    public float GetTimeLeft()
+    {
+        return levelLength - (Time.time - startTime);
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(waitingTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

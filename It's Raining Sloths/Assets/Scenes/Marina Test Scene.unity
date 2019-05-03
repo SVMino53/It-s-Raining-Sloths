@@ -253,14 +253,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246507092}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdbda12009e04a14d88c6fe8692c5665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RotateLeft: 97
   RotateRight: 100
-  RotationSpeed: 1
+  RotationSpeed: 2
   numberOfLanes: 5
 --- !u!114 &246507095
 MonoBehaviour:
@@ -279,7 +279,7 @@ MonoBehaviour:
   MoveDown: 115
   TreesName: Trees
   moving: 1
-  BounceDownHeight: 15
+  BounceDownHeight: 5
   StannedLength: 0.4
   minHeight: 0
 --- !u!114 &246507096
@@ -295,6 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  timeMultiplier: 120
+  pointsText: {fileID: 2078726164}
 --- !u!114 &246507097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +361,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246507092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 880a499fc7a19224e85815db74b2e78f, type: 3}
   m_Name: 
@@ -711,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df92167c83c3744f90eab501dc4eb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeHeight: 5000
+  treeHeight: 300
   treePartHeight: 0.6
   TreeTag: Tree
 --- !u!114 &585701230
@@ -803,8 +805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18b27fcb866dd644912c6efcb096424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLength: 2100
+  levelLength: 100
   time: {fileID: 1579645116}
+  waitingTime: 3
 --- !u!114 &618511232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,7 +913,7 @@ PrefabInstance:
     - target: {fileID: 3416600495711894203, guid: a66865c11a2023f4591a61eb90116d01,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 60
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3416600495711894203, guid: a66865c11a2023f4591a61eb90116d01,
         type: 3}
@@ -1457,7 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7224d85242829343a4f698a8022046c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleHeight: 20
+  visibleHeight: 120
   TreesName: Trees
   PlayerTag: Player
   maxHeight: 0
@@ -1764,7 +1767,7 @@ PrefabInstance:
     - target: {fileID: 3416600495711894203, guid: a66865c11a2023f4591a61eb90116d01,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 60
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3416600495711894203, guid: a66865c11a2023f4591a61eb90116d01,
         type: 3}
@@ -1864,6 +1867,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1579645115}
+  - {fileID: 2078726163}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2694,14 +2698,14 @@ RectTransform:
   m_GameObject: {fileID: 1579645114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3}
-  m_LocalScale: {x: 1.6185, y: 1.5975, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1160495495}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 299, y: 184}
+  m_AnchoredPosition: {x: 701, y: 325}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579645116
@@ -3229,6 +3233,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1444840332}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2078726162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2078726163}
+  - component: {fileID: 2078726165}
+  - component: {fileID: 2078726164}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2078726163
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078726162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1160495495}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -512, y: -337}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2078726164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078726162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: PointsPlaceholder
+--- !u!222 &2078726165
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078726162}
+  m_CullTransparentMesh: 0
 --- !u!1 &2117932329
 GameObject:
   m_ObjectHideFlags: 0
