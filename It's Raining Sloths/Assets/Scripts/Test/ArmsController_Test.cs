@@ -9,7 +9,7 @@ public class ArmsController_Test : MonoBehaviour
     [SerializeField]
     KeyCode CatchRight = KeyCode.P;
     [SerializeField]
-    float activePhaseLength = 5.0f;
+    float activePhaseLength = 5f;
     [SerializeField]
     string LeftArmName = "Detector_Left";
     [SerializeField]

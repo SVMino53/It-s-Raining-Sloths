@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 246507094}
   - component: {fileID: 246507100}
   - component: {fileID: 246507096}
+  - component: {fileID: 246507101}
   - component: {fileID: 246507097}
   - component: {fileID: 246507098}
   - component: {fileID: 246507093}
@@ -274,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294617b2d1a3bb849b90342cb4083d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.48
+  speed: 0.15
   MoveUp: 119
   MoveDown: 115
   TreesName: Trees
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246507092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 214bbeb6a947fcd478a267d6c6919e01, type: 3}
   m_Name: 
@@ -370,6 +371,23 @@ MonoBehaviour:
   RotateRight: 100
   RotationSpeed: 3
   numOfLanes: 5
+--- !u!114 &246507101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246507092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4d3c9f9bf19a84fa40cb641157ba9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CatchLeft: 111
+  CatchRight: 112
+  activePhaseLength: 5
+  LeftArmName: Detector_Left
+  RightArmName: Detector_Right
 --- !u!4 &356605069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400112, guid: d010e16d1fe35244491d0854a1a84f2a,
@@ -403,13 +421,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421080612}
-  m_LocalRotation: {x: 0, y: 0.19080894, z: 0, w: 0.9816273}
-  m_LocalPosition: {x: 1.4, y: 1.3, z: -0.9}
+  m_LocalRotation: {x: -0.20394258, y: 0.1615989, z: 0.16148439, w: 0.95195377}
+  m_LocalPosition: {x: 1.04, y: 1.49, z: -0.89}
   m_LocalScale: {x: 1.2, y: 1.2, z: 2}
   m_Children: []
   m_Father: {fileID: 246507099}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 22, z: 0}
+  m_LocalEulerAnglesHint: {x: -26.134, y: 15.625001, z: 15.607}
 --- !u!65 &421080614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -713,7 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df92167c83c3744f90eab501dc4eb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeHeight: 300
+  treeHeight: 1000
   treePartHeight: 0.6
   TreeTag: Tree
 --- !u!114 &585701230
@@ -728,8 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed43d314b8aa44469c131331d16e9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinDistance: 5
-  MaxDistance: 15
+  MinDistance: 9.5
+  MaxDistance: 18.6
   MinHeight: 20
   MaxHeight: 10
   PositionOffset: {x: 0, y: 0, z: 0}
@@ -788,7 +806,7 @@ MonoBehaviour:
   BabySlothObj: {fileID: 1395478428809817612, guid: a3cac978c64ba08468f7416024e7169d,
     type: 3}
   numberOfLanes: 5
-  DistanceFromPlayer: 50.4
+  DistanceFromPlayer: 90
   TreesName: Trees
   PlayerTag: Player
   spawnRate: 2
@@ -1615,7 +1633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098738784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 22.2, z: 0}
   m_LocalScale: {x: 78.22143, y: 1, z: 60.743744}
   m_Children:
   - {fileID: 2133705629}
@@ -2777,13 +2795,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722775452}
-  m_LocalRotation: {x: 0, y: -0.19080894, z: 0, w: 0.9816273}
-  m_LocalPosition: {x: -1.4, y: 1.3, z: -0.9}
+  m_LocalRotation: {x: -0.21310176, y: -0.1247504, z: -0.20222877, w: 0.9476964}
+  m_LocalPosition: {x: -1.01, y: 1.91, z: -0.69}
   m_LocalScale: {x: 1.2, y: 1.2, z: 2}
   m_Children: []
   m_Father: {fileID: 246507099}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -22, z: 0}
+  m_LocalEulerAnglesHint: {x: -27.024002, y: -9.711, z: -21.752}
 --- !u!65 &1722775454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2807,7 +2825,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

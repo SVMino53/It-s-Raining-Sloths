@@ -57,13 +57,18 @@ public class Rotate : MonoBehaviour
         if (curLane == numberOfLanes) curLane = 0;
     }
 
-    IEnumerator ChangeLane(float speed)
+    IEnumerator ChangeLane(float localSpeed)
     {
         float curAngel = 0;
+        
         while(curAngel < rotationAngle)
         {
-            transform.Rotate(0, speed, 0);
-            curAngel += Mathf.Abs(speed);
+            if (curAngel + Mathf.Abs(localSpeed) > rotationAngle)
+                if (localSpeed < 0) localSpeed = -1;
+                else localSpeed = 1;
+
+            transform.Rotate(0, localSpeed, 0);
+            curAngel += Mathf.Abs(localSpeed);
             yield return null;
         }
         inRotation = false;

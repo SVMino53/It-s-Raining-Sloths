@@ -17,29 +17,15 @@ public class CatchDetection : MonoBehaviour
        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Sloth" && isActive)
+        
+        if (other.gameObject.tag == "Sloth")
         {
             if(player!=null)
                 player.GetComponent<Score>().AddToScore(nPointsForCatching);
+
+            other.gameObject.SetActive(false);
         }
-    }
-
-    public void SetActive(bool active)
-    {
-        isActive = active;
-    }
-
-    public bool GetActiveStatus()
-    {
-        return isActive;
     }
 }

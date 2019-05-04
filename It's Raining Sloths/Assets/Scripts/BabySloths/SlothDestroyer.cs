@@ -16,7 +16,7 @@ public class SlothDestroyer : MonoBehaviour
     void Update()
     {
         if (player != null)
-            if (transform.position.y < player.GetComponent<Move>().GetCurPosY())
+            if (transform.position.y < player.GetComponent<GeneralMovement>().GetCurPosY())
                 Destroy(gameObject);
     }
 }

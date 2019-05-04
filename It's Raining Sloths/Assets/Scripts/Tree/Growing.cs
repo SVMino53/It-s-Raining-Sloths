@@ -31,7 +31,7 @@ public class Growing : MonoBehaviour
     void Update()
     {
         if(player!=null)
-            playerCurPosY = player.GetComponent<Move>().GetCurPosY();
+            playerCurPosY = player.GetComponent<GeneralMovement>().GetCurPosY();
 
         if(playerCurPosY >= treeTopY + treeHeight*0.3  && treeTopY<maxHeight-treeHeight)
         {

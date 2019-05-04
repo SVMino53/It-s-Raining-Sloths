@@ -33,23 +33,23 @@ public class ArmsController : MonoBehaviour
     {
         if (Input.GetKeyDown(CatchRight) && armActive == false)
         {
-            rightArm.GetComponent<CatchDetection>().SetActive(true);
+            rightArm.SetActive(true);
             armActive = true;
         }
 
         if (Input.GetKeyDown(CatchLeft) && armActive == false)
         {
-            leftArm.GetComponent<CatchDetection>().SetActive(true);
+            leftArm.SetActive(true);
             armActive = true;
         }
 
         if (Time.time - timer >= activePhaseLength)
         {
-            if (leftArm.GetComponent<CatchDetection>().GetActiveStatus())
-                leftArm.GetComponent<CatchDetection>().SetActive(false);
+            if (leftArm.activeSelf)
+                leftArm.SetActive(false);
 
-            if (rightArm.GetComponent<CatchDetection>().GetActiveStatus())
-                rightArm.GetComponent<CatchDetection>().SetActive(false);
+            if (rightArm.activeSelf)
+                rightArm.SetActive(false);
 
             armActive = false;
             timer = Time.time;
