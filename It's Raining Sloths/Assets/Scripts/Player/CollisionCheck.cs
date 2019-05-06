@@ -38,8 +38,9 @@ public class CollisionCheck : MonoBehaviour
             if (collider == myCollider)
                 continue;
 
-            if (collider.gameObject.CompareTag("Branch") && collider.transform.position.y >= myCollider.transform.position.y)
+            if (collider.gameObject.CompareTag("Branch") && collider.gameObject.transform.position.y >= myCollider.gameObject.transform.position.y)   
             {
+                Debug.Log("they: " +collider.transform.position.y + " me: " + myCollider.gameObject.transform.position.y);
                 Vector3 otherPosition = collider.transform.position;
                 Quaternion otherRotation = collider.transform.rotation;
 
@@ -51,7 +52,9 @@ public class CollisionCheck : MonoBehaviour
                     collider, otherPosition, otherRotation,
                     out direction, out distance
                 );
-
+                //
+                direction = new Vector3(0, direction.y, 0);
+                //
                 if (overlapped)
                 {
                     transform.position += direction * distance;

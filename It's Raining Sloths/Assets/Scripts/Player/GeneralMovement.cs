@@ -73,14 +73,14 @@ public class GeneralMovement : MonoBehaviour
         while (curHeight <= BounceDownHeight)
         {
             localSpeed = getSpeed(speed);
-            if (transform.position.y - localSpeed >= 0 && transform.position.y - localSpeed >= minHeight)
-                transform.position = new Vector3(transform.position.x, transform.position.y - localSpeed, transform.position.z);
+            if (transform.position.y - Mathf.Abs(localSpeed) >= 0 && transform.position.y - Mathf.Abs(localSpeed) >= minHeight)
+                transform.position = new Vector3(transform.position.x, transform.position.y - Mathf.Abs(localSpeed), transform.position.z);
             else
             {
                 moving = true;
                 yield break;
             }
-            curHeight += localSpeed;
+            curHeight += Mathf.Abs(localSpeed);
             yield return null;
         }
         StartCoroutine(Waiting());
