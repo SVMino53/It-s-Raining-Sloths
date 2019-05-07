@@ -17,6 +17,8 @@ public class ArmsController : MonoBehaviour
 
     GameObject rightArm;
     GameObject leftArm;
+    Animator LeftArmAnimator;
+    Animator RightArmAnimator;
 
     bool armActive = false;
     float timer;
