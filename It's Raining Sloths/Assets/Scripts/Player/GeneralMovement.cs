@@ -19,7 +19,7 @@ public class GeneralMovement : MonoBehaviour
     float StannedLength = 0.3f;
 
     /*...........*/
-    public float minHeight;
+   float minHeight;
 
     public void SetSpeed(float value)
     {
@@ -41,7 +41,7 @@ public class GeneralMovement : MonoBehaviour
 
         if (GetComponent<CollisionCheck>().Colliding() && moving)
         {
-            BounceDown();
+            GetComponent<BounceDown>().Bounce(speed);
             GetComponent<CollisionCheck>().SetColliding(false);
         }
         if (moving)
@@ -58,42 +58,12 @@ public class GeneralMovement : MonoBehaviour
         return transform.position.y;
     }
 
-    public void BounceDown()
+    private void OnTriggerEnter(Collider other)
     {
-        moving = false;
-        StartCoroutine(Falling());
-    }
-
-    IEnumerator Falling()
-    {
-        float curHeight = 0;
-        float localSpeed = speed;
-        minHeight = GameObject.FindGameObjectWithTag("Tree").GetComponent<Growing>().GetMinHeight();
-
-        while (curHeight <= BounceDownHeight)
+        if(other.gameObject.CompareTag("Rock"))
         {
-            localSpeed = getSpeed(speed);
-            if (transform.position.y - Mathf.Abs(localSpeed) >= 0 && transform.position.y - Mathf.Abs(localSpeed) >= minHeight)
-                transform.position = new Vector3(transform.position.x, transform.position.y - Mathf.Abs(localSpeed), transform.position.z);
-            else
-            {
-                moving = true;
-                yield break;
-            }
-            curHeight += Mathf.Abs(localSpeed);
-            yield return null;
+            GetComponent<BounceDown>().Bounce(speed, false);
+            other.gameObject.SetActive(false);
         }
-        StartCoroutine(Waiting());
-    }
-
-    IEnumerator Waiting()
-    {
-        yield return new WaitForSeconds(StannedLength);
-        moving = true;
-    }
-
-    float getSpeed(float curSpeed)
-    {
-        return curSpeed *= (0.7f + Mathf.Abs(Mathf.Cos(Time.time)));
     }
 }

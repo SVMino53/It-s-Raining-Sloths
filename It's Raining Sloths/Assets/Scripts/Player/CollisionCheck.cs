@@ -40,7 +40,7 @@ public class CollisionCheck : MonoBehaviour
 
             if (collider.gameObject.CompareTag("Branch") && collider.gameObject.transform.position.y >= myCollider.gameObject.transform.position.y)   
             {
-                Debug.Log("they: " +collider.transform.position.y + " me: " + myCollider.gameObject.transform.position.y);
+
                 Vector3 otherPosition = collider.transform.position;
                 Quaternion otherRotation = collider.transform.rotation;
 
