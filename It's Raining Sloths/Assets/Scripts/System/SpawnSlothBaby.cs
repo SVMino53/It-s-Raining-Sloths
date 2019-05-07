@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnSlothBaby : MonoBehaviour
 {
     [SerializeField]
-    GameObject BabySlothObj = null;
+    GameObject[] Objs;
     [SerializeField]
     int numberOfLanes = 5;
     [SerializeField]
@@ -25,7 +25,7 @@ public class SpawnSlothBaby : MonoBehaviour
     float testRotation;
 
     GameObject sloth;
-    GameObject babySloth;
+    GameObject obj;
     [SerializeField]
     float treeHeight;
     // Start is called before the first frame update 
@@ -37,12 +37,15 @@ public class SpawnSlothBaby : MonoBehaviour
         startTime = Time.time;
     }
 
-    void SpawnSloth(int lane)
+    void SpawnObject(int lane)
     {
-        Quaternion SlothRotation = Quaternion.Euler(new Vector3(0, 360.0f / numberOfLanes * (lane), 0));
+        Quaternion ObjRotation = Quaternion.Euler(new Vector3(0, 360.0f / numberOfLanes * (lane), 0));
         testRotation = 360.0f / numberOfLanes * (lane);
-        babySloth = Instantiate<GameObject>(BabySlothObj, new Vector3(2.0f, sloth.transform.position.y + DistanceFromPlayer, 0.0f), SlothRotation);
-        babySloth.transform.RotateAround(new Vector3(0, transform.position.y, 0), new Vector3(0,1,0), -testRotation+90);
+
+        int rnd  = Random.Range(0, Objs.Length);
+        
+        obj = Instantiate<GameObject>(Objs[rnd], new Vector3(2.0f, sloth.transform.position.y + DistanceFromPlayer, 0.0f), ObjRotation);
+        obj.transform.RotateAround(new Vector3(0, transform.position.y, 0), new Vector3(0,1,0), -testRotation+90);
     }
 
     // Update is called once per frame 
@@ -55,6 +58,7 @@ public class SpawnSlothBaby : MonoBehaviour
                 if (sloth.GetComponent<Rotate>().isActiveAndEnabled)
                     slothLane = sloth.GetComponent<Rotate>().GetCurLane();
                 else slothLane = sloth.GetComponent<Rotate_Analog>().GetCurLane();
+
                 spawnLane = slothLane + Random.Range(-1, 2);
 
                 if (spawnLane < 0) spawnLane = numberOfLanes - 1;
@@ -62,8 +66,8 @@ public class SpawnSlothBaby : MonoBehaviour
 
                 if (sloth.transform.position.y > treeHeight - DistanceFromPlayer)
                     Destroy(this);
-
-                SpawnSloth(spawnLane);
+                if(Objs.Length > 0)
+                    SpawnObject(spawnLane);
 
                 startTime = Time.time;
             }

@@ -9,7 +9,7 @@ public class ArmsController : MonoBehaviour
     [SerializeField]
     KeyCode CatchRight = KeyCode.P;
     [SerializeField]
-    float activePhaseLength = 5.0f;
+    float activePhaseLength = 1f;
     [SerializeField]
     string LeftArmName = "Detector_Left";
     [SerializeField]
@@ -23,36 +23,36 @@ public class ArmsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rightArm = GameObject.Find(RightArmName);
-        leftArm = GameObject.Find(LeftArmName);
         timer = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(CatchRight) && armActive == false)
-        {
-            rightArm.SetActive(true);
-            armActive = true;
-        }
-
         if (Input.GetKeyDown(CatchLeft) && armActive == false)
         {
-            leftArm.SetActive(true);
-            armActive = true;
+            GetComponent<Animator>().SetBool("Climb", false);
+            GetComponent<Animator>().SetBool("Stretch", true);
         }
 
-        if (Time.time - timer >= activePhaseLength)
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Stretching") && GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > .99f)
         {
-            if (leftArm.activeSelf)
-                leftArm.SetActive(false);
-
-            if (rightArm.activeSelf)
-                rightArm.SetActive(false);
-
-            armActive = false;
-            timer = Time.time;
+            GetComponent<Animator>().SetBool("Stretch", false);
+            GetComponent<Animator>().SetBool("Retract", true);
         }
+
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Retract") && GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > .99f)
+        {
+            GetComponent<Animator>().SetBool("Retract", false);
+            GetComponent<Animator>().SetBool("Climb", true);
+        }
+
+        //if (Time.time - timer >= activePhaseLength)
+        //{
+        //    //GetComponent<Animator>().SetBool("Stretch", false);
+        //    //GetComponent<Animator>().SetBool("Climb", true);
+        //    armActive = false;
+        //    timer = Time.time;
+        //}
     }
 }

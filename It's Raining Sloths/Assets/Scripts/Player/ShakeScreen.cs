@@ -31,7 +31,6 @@ public class ShakeScreen : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("enabled");
         originalPos = camTransform.localPosition;
     }
 

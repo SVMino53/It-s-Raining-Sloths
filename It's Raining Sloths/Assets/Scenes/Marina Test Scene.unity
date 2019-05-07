@@ -847,8 +847,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4363ad7ba7b526f4c9d0106ec6173567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BabySlothObj: {fileID: 3881424894765773549, guid: 9777d560b137b3d438934f6d01761dc6,
-    type: 3}
+  Objs:
+  - {fileID: 5811879029178967797, guid: 2c033315b2e56fb4bb81a5470fe410ab, type: 3}
+  - {fileID: 657683911986265478, guid: c1b1e2d41b6bbb74db34c6ec4ed22c1d, type: 3}
+  - {fileID: 7429878983492154297, guid: 6fb7b144f883a674ea6f928f9a6cd3e7, type: 3}
+  - {fileID: 2788746097249589744, guid: b61964a0075351f41bcd657394f53791, type: 3}
+  - {fileID: 1595667402967474405, guid: 33422dfe67601714b8ab52dcdb4ea732, type: 3}
   numberOfLanes: 5
   DistanceFromPlayer: 90
   TreesName: Trees
