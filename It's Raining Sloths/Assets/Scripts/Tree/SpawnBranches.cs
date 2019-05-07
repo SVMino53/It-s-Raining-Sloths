@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnBranches : MonoBehaviour
 {
+    //[SerializeField]
+    //GameObject BranchObj;
     [SerializeField]
     [Range(0.1f, 100.0f)]
     float MinDistance = 5.0f;

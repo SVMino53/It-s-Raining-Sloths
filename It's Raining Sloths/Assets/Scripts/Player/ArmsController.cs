@@ -17,6 +17,8 @@ public class ArmsController : MonoBehaviour
 
     GameObject rightArm;
     GameObject leftArm;
+    Animator LeftArmAnimator;
+    Animator RightArmAnimator;
 
     bool armActive = false;
     float timer;
@@ -25,6 +27,10 @@ public class ArmsController : MonoBehaviour
     {
         rightArm = GameObject.Find(RightArmName);
         leftArm = GameObject.Find(LeftArmName);
+
+        LeftArmAnimator = leftArm.GetComponentInChildren<Animator>();
+        RightArmAnimator = rightArm.GetComponentInChildren<Animator>();
+
         timer = Time.time;
     }
 
@@ -35,12 +41,16 @@ public class ArmsController : MonoBehaviour
         {
             rightArm.SetActive(true);
             armActive = true;
+
+            RightArmAnimator.SetBool("ReachOut", true);
         }
 
         if (Input.GetKeyDown(CatchLeft) && armActive == false)
         {
             leftArm.SetActive(true);
             armActive = true;
+
+            LeftArmAnimator.SetBool("ReachOut", true);
         }
 
         if (Time.time - timer >= activePhaseLength)
