@@ -31,7 +31,7 @@ public class ArmsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(CatchLeft) && armActive == false)
+        if (Input.GetKey(CatchLeft) && armActive == false)
         {
             GetComponent<Animator>().SetBool("Climb", false);
             GetComponent<Animator>().SetBool("Stretch", true);

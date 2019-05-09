@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fd536ac3b412a4a9861f5b6020ad7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &530928497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1136,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!114 &709823270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,6 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fd536ac3b412a4a9861f5b6020ad7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &888377471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1538,6 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fd536ac3b412a4a9861f5b6020ad7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &1031661818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1641,6 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3316eea98f467564ab1992ad3879badd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!33 &1098738788
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2079,6 +2084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fd536ac3b412a4a9861f5b6020ad7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &1214957497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2194,6 +2200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &1280874359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3162,6 +3169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &1970091711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3576,6 +3584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &2117932332
 BoxCollider:
   m_ObjectHideFlags: 0

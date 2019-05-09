@@ -25,7 +25,7 @@ public class ArmsController_Test : MonoBehaviour
     {
         rightArm = GameObject.Find(RightArmName);
         leftArm = GameObject.Find(LeftArmName);
-        timer = Time.time;
+        //timer = Time.time;
 
         rightArm.SetActive(false);
         leftArm.SetActive(false);
@@ -34,28 +34,36 @@ public class ArmsController_Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(CatchRight) && armActive == false)
+        if (Input.GetKey(CatchRight)/* && armActive == false*/)
         {
             rightArm.SetActive(true);
-            armActive = true;
+            //armActive = true;
+        }
+        else
+        {
+            rightArm.SetActive(false);
         }
 
-        if (Input.GetKeyDown(CatchLeft) && armActive == false)
+        if (Input.GetKey(CatchLeft)/* && armActive == false*/)
         {
             leftArm.SetActive(true);
-            armActive = true;
+            //armActive = true;
         }
-
-        if (Time.time - timer >= activePhaseLength)
+        else
         {
-            if (leftArm.activeInHierarchy)
-                leftArm.SetActive(false);
-
-            if (rightArm.activeInHierarchy)
-                rightArm.SetActive(false);
-
-            armActive = false;
-            timer = Time.time;
+            leftArm.SetActive(false);
         }
+
+        //if (Time.time - timer >= activePhaseLength)
+        //{
+        //    if (leftArm.activeInHierarchy)
+        //        leftArm.SetActive(false);
+
+        //    if (rightArm.activeInHierarchy)
+        //        rightArm.SetActive(false);
+
+        //    armActive = false;
+        //    timer = Time.time;
+        //}
     }
 }
