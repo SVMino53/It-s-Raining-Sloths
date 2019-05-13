@@ -8,7 +8,7 @@ public class EnviromentTrees : MonoBehaviour
     float mainTreeHeight;
     void Start()
     {
-        mainTreeHeight = GameObject.Find("TreeTrunks").GetComponent<InitializeTrees>().GetTreeHeight();
+        mainTreeHeight = GameObject.Find("Trees").GetComponent<InitializeTrees>().GetTreeHeight();
         transform.localScale = new Vector3(transform.localScale.x, mainTreeHeight, transform.localScale.z);
         transform.position = new Vector3(transform.position.x, mainTreeHeight*0.5f, transform.position.z);
     }

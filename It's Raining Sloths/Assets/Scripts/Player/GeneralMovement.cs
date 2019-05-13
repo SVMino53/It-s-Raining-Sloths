@@ -43,6 +43,7 @@ public class GeneralMovement : MonoBehaviour
         {
             GetComponent<BounceDown>().Bounce(speed);
             GetComponent<CollisionCheck>().SetColliding(false);
+            GetComponent<Health>().Decrease();
         }
         if (moving)
         {
@@ -63,6 +64,7 @@ public class GeneralMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Rock"))
         {
             GetComponent<BounceDown>().Bounce(speed, false);
+            GetComponent<Health>().Decrease();
             other.gameObject.SetActive(false);
         }
     }

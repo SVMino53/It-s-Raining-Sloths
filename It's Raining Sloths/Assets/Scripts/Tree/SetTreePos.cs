@@ -5,7 +5,7 @@ using UnityEngine;
 public class SetTreePos : MonoBehaviour
 {
     [SerializeField]
-    string TreesName;
+    string TreesName = "Trees";
 
     float treeHeight;
     
