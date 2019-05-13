@@ -1153,6 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!114 &709823270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6954,6 +6955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &1280874359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7922,6 +7924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &1970091711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8336,6 +8339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreesName: Trees
 --- !u!65 &2117932332
 BoxCollider:
   m_ObjectHideFlags: 0
