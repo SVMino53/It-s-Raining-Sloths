@@ -24,4 +24,4 @@ public class EnviromentTrees : MonoBehaviour
     }
 }
 
-        mainTreeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        //mainTreeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();

@@ -46,7 +46,7 @@ ModelImporter:
     2100004: lambert8
     2100006: lambert9
     4300000: pasted__pasted__pCube2
-    7400000: Take 001
+    7400000: LeftClimb
     9500000: //RootNode
     13700000: pasted__pasted__pCube2
     2186277476908879412: ImportLogs
@@ -79,7 +79,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: LeftClimb
       takeName: Take 001
       firstFrame: 1
       lastFrame: 135
@@ -90,7 +90,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

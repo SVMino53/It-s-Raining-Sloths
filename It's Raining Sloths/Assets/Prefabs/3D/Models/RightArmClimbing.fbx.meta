@@ -44,7 +44,7 @@ ModelImporter:
     2100004: lambert4
     2100006: lambert5
     4300000: pasted__pasted__pCube4
-    7400000: Take 001
+    7400000: RightClimb
     9500000: //RootNode
     13700000: pasted__pasted__pCube4
     2186277476908879412: ImportLogs
@@ -77,7 +77,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: RightClimb
       takeName: Take 001
       firstFrame: 1
       lastFrame: 135
