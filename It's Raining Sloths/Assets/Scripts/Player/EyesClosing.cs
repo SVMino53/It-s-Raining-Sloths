@@ -27,6 +27,10 @@ public class EyesClosing : MonoBehaviour
     [SerializeField]
     [Range(0.01f, 1.0f)]
     float BlurSpeed = 0.1f;
+    [SerializeField]
+    KeyCode LeftRotateKey = KeyCode.A;
+    [SerializeField]
+    KeyCode RightRotateKey = KeyCode.D;
 
     float PrevPosY;
     float CurPosY;
@@ -52,7 +56,7 @@ public class EyesClosing : MonoBehaviour
 
         CurVelocity = CurPosY - PrevPosY;
 
-        if (CurVelocity > MinPlayerVelocity)
+        if (CurVelocity > MinPlayerVelocity || Input.GetKey(LeftRotateKey) || Input.GetKey(RightRotateKey))
         {
             IsDelaying = false;
 

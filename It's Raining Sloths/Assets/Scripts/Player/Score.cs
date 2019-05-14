@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Score : MonoBehaviour
     float timeMultiplier = 120;
    
     [SerializeField]
-    Text pointsText;
+    TextMeshProUGUI pointsText;
 
 
     private void Start()
@@ -20,7 +21,7 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        pointsText.text = score.ToString();
+        pointsText.text = "Sloth\nCount\n" + score.ToString();
     }
 
     float GetScore()
@@ -35,7 +36,7 @@ public class Score : MonoBehaviour
 
     public void countPoints(float resultTime)
     { 
-        score += resultTime * timeMultiplier;
+        //score += resultTime * timeMultiplier;
     }
 
     
