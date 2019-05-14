@@ -18,8 +18,8 @@ public class ArmsController_Test : MonoBehaviour
     GameObject rightArm;
     GameObject leftArm;
 
-    bool armActive = false;
-    float timer;
+    //bool armActive = false;
+    //float timer;
     // Start is called before the first frame update
     void Start()
     {

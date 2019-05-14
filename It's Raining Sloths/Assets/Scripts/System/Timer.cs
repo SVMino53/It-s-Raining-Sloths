@@ -3,44 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    float startTime;
     [SerializeField]
-    float levelLength;
+    float LevelLength = 120.0f;
     [SerializeField]
-    Text time;
-    [SerializeField]
-    float waitingTime = 13;
+    TextMeshProUGUI TimeText;
+
+    float StartTime;
+    int Seconds = 0;
+    int Minutes = 0;
 
     bool playerReachedTheTop = false;
     // Start is called before the first frame update
     void Start()
     {
-        startTime = Time.time;
+        StartTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
-    { 
-        if(Time.time - startTime>=levelLength && !playerReachedTheTop)
+    {
+        Seconds = (int)GetTimeLeft() % 60;
+        Minutes = (int)GetTimeLeft() / 60;
+
+        if(Time.time - StartTime>=LevelLength && !playerReachedTheTop)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().countPoints(GetTimeLeft());
-            StartCoroutine(Wait());
-        } else {
-            time.text = ((int)levelLength - ((int)(Time.time - startTime))).ToString();
+        }
+        else if(Seconds >= 10)
+        {
+            TimeText.text = Minutes.ToString() + ":" + Seconds.ToString();
+        }
+        else
+        {
+            TimeText.text = Minutes.ToString() + ":0" + Seconds.ToString();
         }
     }
 
     public float GetTimeLeft()
     {
-        return levelLength - (Time.time - startTime);
-    }
-
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(waitingTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        return LevelLength - (Time.time - StartTime);
     }
 }
