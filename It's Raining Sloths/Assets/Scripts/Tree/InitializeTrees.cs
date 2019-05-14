@@ -29,7 +29,7 @@ public class InitializeTrees : MonoBehaviour
 
         if(treeHeight % treePartHeight != 0 && treePartHeight != 0)
         {
-            treeHeight = treePartHeight * ((int)(treeHeight / treePartHeight)-1);
+            treeHeight = (int)(treeHeight/treePartHeight) * treePartHeight;
         }
     }
 

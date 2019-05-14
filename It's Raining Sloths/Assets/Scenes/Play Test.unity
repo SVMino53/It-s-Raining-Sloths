@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreesName: TreeTrunks
+  TreesName: Trees
 --- !u!65 &175435077
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3316eea98f467564ab1992ad3879badd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreesName: 
+  TreesName: Trees
 --- !u!135 &548590073
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreesName: TreeTrunks
+  TreesName: Trees
 --- !u!65 &793953430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3104,7 +3104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreesName: TreeTrunks
+  TreesName: Trees
 --- !u!65 &815117495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4202,7 +4202,7 @@ GameObject:
   - component: {fileID: 1092679018}
   - component: {fileID: 1092679019}
   m_Layer: 0
-  m_Name: TreeTrunks
+  m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6013,7 +6013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcd81b86b9ff51449761a4b0ebf84f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreesName: TreeTrunks
+  TreesName: Trees
 --- !u!65 &1687748424
 BoxCollider:
   m_ObjectHideFlags: 0

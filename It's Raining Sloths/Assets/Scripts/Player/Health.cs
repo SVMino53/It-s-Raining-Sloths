@@ -12,10 +12,13 @@ public class Health : MonoBehaviour
 
     float startTime;
     bool timerIsOn;
+    GameObject particle = null;
 
     void Start()
     {
         startTime = Time.time;
+        particle = GameObject.Find("Particle_Player");
+        particle.GetComponent<ParticleSystem>().Stop();
     }
 
     void Update()
@@ -33,6 +36,8 @@ public class Health : MonoBehaviour
         {
             timerIsOn = true;
             startTime = Time.time;
+            if(particle)
+                particle.GetComponent<ParticleSystem>().Play(); 
         }
     }
 
@@ -41,6 +46,8 @@ public class Health : MonoBehaviour
         if(Time.time - startTime >= delayTime)
         {
             timerIsOn = false;
+            if (particle)
+                particle.GetComponent<ParticleSystem>().Stop();
         } 
     }
 

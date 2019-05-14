@@ -78,7 +78,7 @@ public class EyesClosing : MonoBehaviour
         
         if (Mathf.Abs(transform.localPosition.y) <= Mathf.Abs(ClosedY))
         {
-            SceneManager.LoadScene(ThisSceneIndex, LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         PrevPosY = PlayerObj.transform.position.y;
