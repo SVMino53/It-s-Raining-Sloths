@@ -28,6 +28,9 @@ public class SpawnSlothBaby : MonoBehaviour
     GameObject obj;
     [SerializeField]
     float treeHeight;
+    [SerializeField]
+    GameObject spawner;
+
     // Start is called before the first frame update 
     void Start()
     {
@@ -44,7 +47,7 @@ public class SpawnSlothBaby : MonoBehaviour
 
         int rnd  = Random.Range(0, Objs.Length);
         
-        obj = Instantiate<GameObject>(Objs[rnd], new Vector3(2.0f, GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight() /*sloth.transform.position.y + DistanceFromPlayer*/, 0.0f), ObjRotation);
+        obj = Instantiate<GameObject>(Objs[rnd], new Vector3(2.0f, spawner.transform.position.y/*sloth.transform.position.y + DistanceFromPlayer*/, 0.0f), ObjRotation);
         obj.transform.RotateAround(new Vector3(0, transform.position.y, 0), new Vector3(0,1,0), -testRotation+90);
     }
 

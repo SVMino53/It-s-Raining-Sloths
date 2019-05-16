@@ -8,17 +8,19 @@ public class Health : MonoBehaviour
     [SerializeField]
     int nLives = 5;
     [SerializeField]
-    float delayTime = 5;
+    float dizzyTime = 5;
 
     float startTime;
     bool timerIsOn;
-    GameObject particle = null;
+    [SerializeField]
+    GameObject stars = null;
 
+    //
+    float timer;
     void Start()
     {
         startTime = Time.time;
-        particle = GameObject.Find("Particle_Player");
-        particle.GetComponent<ParticleSystem>().Stop();
+        stars.GetComponent<Stars>().Activate(false);
     }
 
     void Update()
@@ -36,18 +38,19 @@ public class Health : MonoBehaviour
         {
             timerIsOn = true;
             startTime = Time.time;
-            if(particle)
-                particle.GetComponent<ParticleSystem>().Play(); 
+            if(stars)
+                stars.GetComponent<Stars>().Activate(true); 
         }
     }
 
     void Timer()
     {
-        if(Time.time - startTime >= delayTime)
+        timer = Time.time - startTime;
+        if (Time.time - startTime >= dizzyTime)
         {
             timerIsOn = false;
-            if (particle)
-                particle.GetComponent<ParticleSystem>().Stop();
+            if (stars)
+                stars.GetComponent<Stars>().Activate(false);
         } 
     }
 

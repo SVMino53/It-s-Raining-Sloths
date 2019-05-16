@@ -6,6 +6,7 @@ public class BounceDown : MonoBehaviour
 {
     float minHeight;
     float speed;
+    [SerializeField]
     float BounceDownHeight = 5f;
     [SerializeField]
     float StannedLength = 0.3f;
