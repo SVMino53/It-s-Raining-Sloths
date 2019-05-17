@@ -17,9 +17,15 @@ public class GeneralMovement : MonoBehaviour
     float BounceDownHeight = 10f;
     [SerializeField]
     float StannedLength = 0.3f;
+    [SerializeField]
+    AudioSource HitSound = null;
+    [SerializeField]
+    AudioSource MonkeyLaughSound = null;
+    [SerializeField]
+    ulong MLSoundDelay = 3L;
 
     /*...........*/
-   float minHeight;
+    float minHeight;
 
     public void SetSpeed(float value)
     {
@@ -66,6 +72,8 @@ public class GeneralMovement : MonoBehaviour
             GetComponent<BounceDown>().Bounce(speed, false);
             GetComponent<Health>().Decrease();
             other.gameObject.SetActive(false);
+            HitSound.Play();
+            MonkeyLaughSound.Play(MLSoundDelay * 44100L);
         }
     }
 }
