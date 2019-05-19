@@ -65,9 +65,21 @@ public class GeneralMovement : MonoBehaviour
         return transform.position.y;
     }
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.gameObject.CompareTag("Rock"))
+    //    {
+    //        GetComponent<BounceDown>().Bounce(speed, false);
+    //        GetComponent<Health>().Decrease();
+    //        other.gameObject.SetActive(false);
+    //        HitSound.Play();
+    //        MonkeyLaughSound.Play(MLSoundDelay * 44100L);
+    //    }
+    //}
+
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Rock"))
+        if (other.gameObject.CompareTag("Rock"))
         {
             GetComponent<BounceDown>().Bounce(speed, false);
             GetComponent<Health>().Decrease();

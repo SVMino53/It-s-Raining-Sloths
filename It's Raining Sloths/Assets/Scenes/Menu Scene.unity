@@ -209,13 +209,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452546060}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -349,7 +349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ea853a18ea54443a8c5a4d90359eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainSceneName: Video
+  NextSceneName: Video
+  allowedKeys: 66000000670000006100000064000000
+  useMat: 1
 --- !u!4 &699776983
 Transform:
   m_ObjectHideFlags: 0
@@ -498,7 +500,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: da090904853f634419bae5c19ec860ea, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

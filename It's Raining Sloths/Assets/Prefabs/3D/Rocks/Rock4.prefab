@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 350233129988394196}
   - component: {fileID: 7989486071198550928}
   - component: {fileID: 6973271189361912952}
+  - component: {fileID: 5663679815138846628}
   m_Layer: 0
   m_Name: Rock4
   m_TagString: Rock
@@ -57,11 +58,24 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2788746097249589744}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.4096508
   m_Center: {x: 0, y: -0.0903492, z: 0}
+--- !u!114 &5663679815138846628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788746097249589744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba18bd792c0cb564ba3a759b70ec43a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCollisionDistance: 35
 --- !u!1001 &3913541446731464444
 PrefabInstance:
   m_ObjectHideFlags: 0

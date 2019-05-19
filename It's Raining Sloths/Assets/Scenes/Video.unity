@@ -242,7 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ea853a18ea54443a8c5a4d90359eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainSceneName: Marina Test Scene
+  NextSceneName: Play Test
+  allowedKeys: 6600000067000000
+  useMat: 0
 --- !u!1 &809131776
 GameObject:
   m_ObjectHideFlags: 0
