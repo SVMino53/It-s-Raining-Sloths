@@ -47,4 +47,9 @@ public class Timer : MonoBehaviour
     {
         return LevelLength - (Time.time - StartTime);
     }
+
+    public void AddToTime(float sec)
+    {
+        LevelLength += sec;
+    }
 }

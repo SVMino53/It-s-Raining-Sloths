@@ -19,4 +19,12 @@ public class SlothDestroyer : MonoBehaviour
             if (transform.position.y < player.GetComponent<GeneralMovement>().GetCurPosY())
                 Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Sloth"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

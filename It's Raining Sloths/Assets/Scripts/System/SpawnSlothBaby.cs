@@ -30,11 +30,15 @@ public class SpawnSlothBaby : MonoBehaviour
     float treeHeight;
     [SerializeField]
     GameObject spawner;
+    [SerializeField]
+    float defaultTreeHeight = 70;
 
     // Start is called before the first frame update 
     void Start()
     {
-        treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        if (GameObject.Find(TreesName))
+            treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        else treeHeight = defaultTreeHeight;
         sloth = GameObject.FindGameObjectWithTag(PlayerTag);
         slothLane = sloth.GetComponent<Rotate>().GetCurLane();
         startTime = Time.time;

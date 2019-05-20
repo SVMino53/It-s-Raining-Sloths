@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BounceDown : MonoBehaviour
 {
-    float minHeight;
+    float minHeight = 0;
     float speed;
     [SerializeField]
     float BounceDownHeight = 5f;
@@ -25,7 +25,8 @@ public class BounceDown : MonoBehaviour
     {
         float curHeight = 0;
         float localSpeed = speed;
-        minHeight = GameObject.FindGameObjectWithTag("Tree").GetComponent<Growing>().GetMinHeight();
+        if (GameObject.FindGameObjectWithTag("Tree").GetComponent<Growing>())
+            minHeight = GameObject.FindGameObjectWithTag("Tree").GetComponent<Growing>().GetMinHeight();
 
         while (curHeight <= BounceDownHeight)
         {

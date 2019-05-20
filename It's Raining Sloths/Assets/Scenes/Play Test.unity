@@ -446,13 +446,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88856911}
-  m_LocalRotation: {x: -0.67559016, y: 0, z: 0, w: 0.7372774}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.08, z: -1.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1835343318}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -85, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!81 &88856913
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4603,6 +4603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
+  TimeBonus: 10
 --- !u!65 &759157122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4614,8 +4615,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.109601, y: 1, z: 1.4186189}
-  m_Center: {x: 0.5548004, y: -0.00000007001131, z: 0.20930952}
+  m_Size: {x: 2.5522738, y: 1, z: 1.4186189}
+  m_Center: {x: 0.7761361, y: -0.0000008952996, z: 0.2093095}
 --- !u!23 &759157123
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9627,7 +9628,7 @@ MonoBehaviour:
   DistanceFromPlayer: 30
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 2
+  spawnRate: 5
   treeHeight: 0
   spawner: {fileID: 1749746074}
 --- !u!114 &1413052319
@@ -9718,7 +9719,7 @@ MonoBehaviour:
   DistanceFromPlayer: 20
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 6
+  spawnRate: 3
   treeHeight: 0
   spawner: {fileID: 1749746074}
 --- !u!114 &1413052324
@@ -9933,6 +9934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
+  TimeBonus: 10
 --- !u!23 &1477699582
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10668,6 +10670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
+  TimeBonus: 10
 --- !u!65 &1571917083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10679,8 +10682,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5317718, y: 1, z: 1.3996625}
-  m_Center: {x: -0.2658836, y: 0.00000011103368, z: 0.19983122}
+  m_Size: {x: 1.9025104, y: 1, z: 1.9221182}
+  m_Center: {x: -0.45125303, y: 0.0000014418637, z: 0.46106064}
 --- !u!23 &1571917084
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -23,6 +23,8 @@ public class GeneralMovement : MonoBehaviour
     AudioSource MonkeyLaughSound = null;
     [SerializeField]
     ulong MLSoundDelay = 3L;
+    [SerializeField]
+    float defaultTreeHeight = 70;
 
     /*...........*/
     float minHeight;
@@ -37,7 +39,9 @@ public class GeneralMovement : MonoBehaviour
     {
         initialXpos = transform.position.x;
         initialZpos = transform.position.z;
-        treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        if (GameObject.Find(TreesName))
+            treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
+        else treeHeight = defaultTreeHeight;
     }
 
 
@@ -64,18 +68,6 @@ public class GeneralMovement : MonoBehaviour
     {
         return transform.position.y;
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.gameObject.CompareTag("Rock"))
-    //    {
-    //        GetComponent<BounceDown>().Bounce(speed, false);
-    //        GetComponent<Health>().Decrease();
-    //        other.gameObject.SetActive(false);
-    //        HitSound.Play();
-    //        MonkeyLaughSound.Play(MLSoundDelay * 44100L);
-    //    }
-    //}
 
     private void OnCollisionEnter(Collision other)
     {

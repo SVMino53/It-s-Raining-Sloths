@@ -16,15 +16,17 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
-        pointsText.text = "Points Placeholder";
+        if(pointsText)
+            pointsText.text = "Points Placeholder";
     }
 
     private void Update()
     {
-        pointsText.text = "Sloth\nCount\n" + score.ToString();
+        if (pointsText)
+            pointsText.text = "Sloth\nCount\n" + score.ToString();
     }
 
-    float GetScore()
+    public float GetScore()
     {
         return score;
     }

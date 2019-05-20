@@ -8,6 +8,8 @@ public class CatchDetection : MonoBehaviour
     
     [SerializeField]
     int nPointsForCatching = 1;
+    [SerializeField]
+    float TimeBonus = 10;
 
     bool isActive = false;
     GameObject player;
@@ -24,6 +26,9 @@ public class CatchDetection : MonoBehaviour
         {
             if(player!=null)
                 player.GetComponent<Score>().AddToScore(nPointsForCatching);
+
+            if (GameObject.Find("Systems").GetComponent<Timer>())
+                GameObject.Find("Systems").GetComponent<Timer>().AddToTime(TimeBonus);
 
             other.gameObject.SetActive(false);
         }
