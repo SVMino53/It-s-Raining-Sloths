@@ -31,6 +31,7 @@ public class EyesClosing : MonoBehaviour
     KeyCode LeftRotateKey = KeyCode.A;
     [SerializeField]
     KeyCode RightRotateKey = KeyCode.D;
+    
 
     float PrevPosY;
     float CurPosY;
@@ -82,7 +83,7 @@ public class EyesClosing : MonoBehaviour
         
         if (Mathf.Abs(transform.localPosition.y) <= Mathf.Abs(ClosedY))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Menu Scene");
         }
 
         PrevPosY = PlayerObj.transform.position.y;

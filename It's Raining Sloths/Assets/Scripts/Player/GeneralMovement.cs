@@ -23,8 +23,6 @@ public class GeneralMovement : MonoBehaviour
     AudioSource MonkeyLaughSound = null;
     [SerializeField]
     ulong MLSoundDelay = 3L;
-    [SerializeField]
-    float defaultTreeHeight = 70;
 
     /*...........*/
     float minHeight;
@@ -81,3 +79,12 @@ public class GeneralMovement : MonoBehaviour
         }
     }
 }
+
+    [SerializeField]
+    AudioSource MonkeyLaughSound = null;
+    [SerializeField]
+    ulong MLSoundDelay = 3L;
+    [SerializeField]
+    float defaultTreeHeight = 70;
+
+    /*...........*/

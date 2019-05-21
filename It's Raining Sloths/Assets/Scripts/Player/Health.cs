@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
     void Update()
     {
         Timer();
-        if (nLives <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (nLives <= 0) SceneManager.LoadScene("Menu Scene");
     }
 
     public void Decrease()
