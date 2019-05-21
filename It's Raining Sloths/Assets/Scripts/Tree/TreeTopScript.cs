@@ -21,7 +21,7 @@ public class TreeTopScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Menu Scene");
         }
     }
 }

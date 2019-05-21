@@ -346,11 +346,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 699776981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2ea853a18ea54443a8c5a4d90359eb5, type: 3}
+  m_Script: {fileID: 11500000, guid: bd85896bdf3c8ee44af06469c9a22614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: Video
-  allowedKeys: 66000000670000006100000064000000
+  allowedKeys: 6600000067000000
   useMat: 1
 --- !u!4 &699776983
 Transform:

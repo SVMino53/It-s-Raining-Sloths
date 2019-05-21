@@ -77,8 +77,8 @@ public class GeneralMovement : MonoBehaviour
     //    }
     //}
 
-    private void OnCollisionEnter(Collision other)
-    {
+    private void OnCollisionEnter(Collision other)
+    {
         if (other.gameObject.CompareTag("Rock"))
         {
             GetComponent<BounceDown>().Bounce(speed, false);
@@ -86,6 +86,6 @@ public class GeneralMovement : MonoBehaviour
             other.gameObject.SetActive(false);
             HitSound.Play();
             MonkeyLaughSound.Play(MLSoundDelay * 44100L);
-        }
+        }
     }
 }

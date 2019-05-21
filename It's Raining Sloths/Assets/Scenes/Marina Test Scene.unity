@@ -934,6 +934,9 @@ MonoBehaviour:
   moving: 1
   BounceDownHeight: 10
   StannedLength: 0.3
+  HitSound: {fileID: 0}
+  MonkeyLaughSound: {fileID: 0}
+  MLSoundDelay: 3
 --- !u!114 &246507104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2509,7 +2512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &687164552
 Transform:
   m_ObjectHideFlags: 0
