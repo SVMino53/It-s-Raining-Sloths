@@ -14,8 +14,7 @@ public class Health : MonoBehaviour
     bool timerIsOn;
     [SerializeField]
     GameObject stars = null;
-
-    //
+    
     float timer;
     void Start()
     {
@@ -26,7 +25,12 @@ public class Health : MonoBehaviour
     void Update()
     {
         Timer();
-        if (nLives <= 0) SceneManager.LoadScene("Menu Scene");
+        if (nLives <= 0)
+        {
+            GlobalVars.PlayerScore = 2540L;
+
+            SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
+        }
     }
 
     public void Decrease()
