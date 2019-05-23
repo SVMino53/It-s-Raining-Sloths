@@ -23,9 +23,12 @@ public class GeneralMovement : MonoBehaviour
     AudioSource MonkeyLaughSound = null;
     [SerializeField]
     ulong MLSoundDelay = 3L;
+    [SerializeField]
+    float defaultTreeHeight = 150;
 
     /*...........*/
     float minHeight;
+   
 
     public void SetSpeed(float value)
     {
@@ -51,7 +54,7 @@ public class GeneralMovement : MonoBehaviour
         {
             GetComponent<BounceDown>().Bounce(speed);
             GetComponent<CollisionCheck>().SetColliding(false);
-            GetComponent<Health>().Decrease();
+            //GetComponent<Health>().Decrease();
         }
         if (moving)
         {
@@ -80,11 +83,3 @@ public class GeneralMovement : MonoBehaviour
     }
 }
 
-    [SerializeField]
-    AudioSource MonkeyLaughSound = null;
-    [SerializeField]
-    ulong MLSoundDelay = 3L;
-    [SerializeField]
-    float defaultTreeHeight = 70;
-
-    /*...........*/

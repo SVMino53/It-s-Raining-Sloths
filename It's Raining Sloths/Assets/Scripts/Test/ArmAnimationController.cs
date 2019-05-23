@@ -17,7 +17,7 @@ public class ArmAnimationController : MonoBehaviour
     [SerializeField]
     float AnimationSpeed = 0.005f;
     [SerializeField]
-    float ReachTime = 5.0f;
+    float ReachTime = 1.5f;
 
     float AnimTime = 0.0f;
     Animator LeftArmAnimator;

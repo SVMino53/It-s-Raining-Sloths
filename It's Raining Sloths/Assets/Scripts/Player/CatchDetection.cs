@@ -24,7 +24,7 @@ public class CatchDetection : MonoBehaviour
         
         if (other.gameObject.tag == "Sloth")
         {
-            if(player!=null)
+            if(player!=null) 
                 player.GetComponent<Score>().AddToScore(nPointsForCatching);
 
             if (GameObject.Find("Systems").GetComponent<Timer>())

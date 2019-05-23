@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1395478428809817613}
   - component: {fileID: 4352974417212991201}
   - component: {fileID: 8286802443166688749}
+  - component: {fileID: 8079987791664384292}
   m_Layer: 0
   m_Name: Baby
   m_TagString: Sloth
@@ -153,6 +154,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0057404adff3bfc44a70d14378e9cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8079987791664384292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395478428809817612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba18bd792c0cb564ba3a759b70ec43a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCollisionDistance: 35
+  timeBeforeDestractionOnBranches: 2
 --- !u!95 &2899186684901033825
 Animator:
   serializedVersion: 3
