@@ -790,7 +790,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246507092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294617b2d1a3bb849b90342cb4083d59, type: 3}
   m_Name: 
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246507092}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee6d5202434edb544a9178a1a4dd4344, type: 3}
   m_Name: 
@@ -937,6 +937,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   MonkeyLaughSound: {fileID: 0}
   MLSoundDelay: 3
+  defaultTreeHeight: 70
 --- !u!114 &246507104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2207,6 +2208,7 @@ MonoBehaviour:
   spawnRate: 1
   treeHeight: 0
   spawner: {fileID: 397631187}
+  defaultTreeHeight: 70
 --- !u!114 &618511230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,6 +2234,7 @@ MonoBehaviour:
   spawnRate: 4
   treeHeight: 0
   spawner: {fileID: 397631187}
+  defaultTreeHeight: 70
 --- !u!114 &618511231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3802,7 +3805,7 @@ RectTransform:
   - {fileID: 1275626495}
   - {fileID: 2044102158}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

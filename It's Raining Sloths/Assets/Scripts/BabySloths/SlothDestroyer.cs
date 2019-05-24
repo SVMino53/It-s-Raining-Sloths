@@ -15,9 +15,9 @@ public class SlothDestroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player != null)
-            if (transform.position.y < player.GetComponent<GeneralMovement>().GetCurPosY())
-                Destroy(gameObject);
+        //if (player != null)
+        //    if (transform.position.y < player.GetComponent<GeneralMovement>().GetCurPosY())
+        //        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -18,43 +18,43 @@ SHRK
 
 4
 
-ISAK
-
-2540
-
-5
-
 SMPU
 
 1979
 
-6
+5
 
 GOOD
 
 777
 
-7
+6
 
 EVIL
 
 666
 
-8
+7
 
 MAAN
 
 555
 
-9
+8
 
 BLZE
 
 420
 
-10
+9
 
 PWDS
 
 399
+
+10
+
+POOP
+
+0
 

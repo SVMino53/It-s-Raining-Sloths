@@ -49,6 +49,11 @@ public class RockColliderController : MonoBehaviour
         {
             StartCoroutine(Wait());
         }
+
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(Wait());
+        }
     }
 
     IEnumerator Wait()
