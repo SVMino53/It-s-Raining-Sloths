@@ -10,9 +10,9 @@ public class Move_Mouse : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetAxis("Mouse Y") < 0)
+        if(Input.GetAxis("Mouse X") !=0)
         {
-            float YMovement = Input.GetAxis("Mouse Y") * speed;
+            float YMovement = Input.GetAxis("Mouse X") * speed;
             
             if (YMovement < speed * -1.5) YMovement = speed * 1.5f;
             

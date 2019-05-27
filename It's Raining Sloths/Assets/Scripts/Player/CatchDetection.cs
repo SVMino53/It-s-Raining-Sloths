@@ -30,6 +30,7 @@ public class CatchDetection : MonoBehaviour
                 GameObject.Find("Systems").GetComponent<Timer>().AddToTime(TimeBonus);
 
             other.gameObject.SetActive(false);
-        }
+        } 
     }
 }
+

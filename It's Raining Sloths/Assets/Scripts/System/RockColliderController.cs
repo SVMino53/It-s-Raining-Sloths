@@ -56,6 +56,7 @@ public class RockColliderController : MonoBehaviour
         }
     }
 
+
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(timeBeforeDestractionOnBranches);
