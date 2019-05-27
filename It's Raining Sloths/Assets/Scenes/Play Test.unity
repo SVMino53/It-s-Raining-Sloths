@@ -4226,12 +4226,12 @@ ParticleSystemRenderer:
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 0
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4283,9 +4283,9 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474965937}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
-  stopAction: 1
+  stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -4358,7 +4358,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4411,7 +4411,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.489593
+      scalar: 2.883589
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4527,7 +4527,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 1.43
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4843,7 +4843,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -4978,7 +4978,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: b1d7fee26e54cc3498f6267f072a45b9, type: 3}
+    m_Texture: {fileID: 0}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -4989,7 +4989,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.3937312
+      value: 0.25
       mode: 0
       spread: 0
       speed:
@@ -5108,7 +5108,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 70
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5225,7 +5225,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 0.3571453
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5233,8 +5233,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.5320848
-          value: 0.9662275
+          time: 0.537639
+          value: 0.46622747
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -6269,7 +6269,7 @@ ParticleSystem:
     speedModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.58
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8077,11 +8077,11 @@ ParticleSystem:
   TrailModule:
     enabled: 0
     mode: 0
-    ratio: 1
+    ratio: 0
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.01
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8131,7 +8131,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 0.2
+    minVertexDistance: 0.51
     textureMode: 0
     ribbonCount: 1
     shadowBias: 0.5
@@ -9345,8 +9345,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 640dc2f025ee433489ca50d9f685de47, type: 2}
+  - {fileID: 2100000, guid: 640dc2f025ee433489ca50d9f685de47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9399,8 +9399,8 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 1
-  cullingMode: 0
+  stopAction: 0
+  cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
@@ -9957,7 +9957,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10000
+    maxNumParticles: 70
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -10092,7 +10092,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: b1d7fee26e54cc3498f6267f072a45b9, type: 3}
+    m_Texture: {fileID: 0}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -15147,8 +15147,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5522738, y: 1, z: 1.4186189}
-  m_Center: {x: 0.7761361, y: -0.0000008952996, z: 0.2093095}
+  m_Size: {x: 2.5522738, y: 2.0334482, z: 1.4186189}
+  m_Center: {x: 0.7761361, y: 0.5167227, z: 0.20930952}
 --- !u!23 &759157123
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20292,6 +20292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578c3c1c6a23a9f45adb17a7abb0e123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleLength: 1
+  LeftArmName: Detector_Left
+  RightArmName: Detector_Right
 --- !u!1 &1424368617
 GameObject:
   m_ObjectHideFlags: 0
@@ -21238,8 +21241,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9025104, y: 1, z: 1.9221182}
-  m_Center: {x: -0.45125303, y: 0.0000014418637, z: 0.46106064}
+  m_Size: {x: 1.9025104, y: 2.1207592, z: 1.9221182}
+  m_Center: {x: -0.45125294, y: 0.5603839, z: 0.4610622}
 --- !u!23 &1571917084
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22754,6 +22757,7 @@ GameObject:
   - component: {fileID: 1835343311}
   - component: {fileID: 1835343325}
   - component: {fileID: 1835343326}
+  - component: {fileID: 1835343327}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -23025,6 +23029,21 @@ MonoBehaviour:
   nLives: 5
   dizzyTime: 5
   stars: {fileID: 1502720461}
+--- !u!114 &1835343327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835343310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578c3c1c6a23a9f45adb17a7abb0e123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleLength: 6.46
+  LeftArmName: Detector_Left
+  RightArmName: Detector_Right
 --- !u!1001 &1866026653
 PrefabInstance:
   m_ObjectHideFlags: 0

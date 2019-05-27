@@ -23,13 +23,18 @@ public class CatchDetection : MonoBehaviour
     {         
         if (other.gameObject.tag == "Sloth")
         {
-            if(player!=null) 
+            if (player != null)
+            {
                 player.GetComponent<Score>().AddToScore(nPointsForCatching);
+                player.GetComponent<ParticleController>().PlayParticle(gameObject.name);
+            }
 
             if (GameObject.Find("Systems").GetComponent<Timer>())
                 GameObject.Find("Systems").GetComponent<Timer>().AddToTime(TimeBonus);
 
-            other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<SlothDestroyer>().Deactivate();
+
+            //Destroy(other.gameObject);
         } 
     }
 }

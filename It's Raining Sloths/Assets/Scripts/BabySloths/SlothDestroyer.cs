@@ -5,6 +5,10 @@ using UnityEngine;
 public class SlothDestroyer : MonoBehaviour
 {
     GameObject player;
+    [SerializeField]
+    string LeftArmName = "Detector_Left";
+    [SerializeField]
+    string RightArmName = "Detector_Right";
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +30,11 @@ public class SlothDestroyer : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void Deactivate()
+    {
+        Debug.Log("Die");
+        Destroy(gameObject);
     }
 }
