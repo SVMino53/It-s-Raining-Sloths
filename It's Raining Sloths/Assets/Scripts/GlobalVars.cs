@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static class GlobalVars
 {
-    public static long PlayerScore = 0L;
-    public static float GameTime = 120.0f;
+    public static double PlayerScore = 0.0;
+    public static int GameTime = 120;
     public static int SlothCount = 0;
     public static float Progress = 0.0f;
 }

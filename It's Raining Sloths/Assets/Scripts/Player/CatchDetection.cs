@@ -29,6 +29,8 @@ public class CatchDetection : MonoBehaviour
                 player.GetComponent<ParticleController>().PlayParticle(gameObject.name);
             }
 
+            GlobalVars.SlothCount += nPointsForCatching;
+
             if (GameObject.Find("Systems").GetComponent<Timer>())
                 GameObject.Find("Systems").GetComponent<Timer>().AddToTime(TimeBonus);
 

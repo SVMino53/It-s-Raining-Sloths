@@ -31,7 +31,7 @@ public class HighScoreInitials : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerScore = GlobalVars.PlayerScore;
+        PlayerScore = (long)GlobalVars.PlayerScore;
 
         PlayerScoreText.text = PlayerScore.ToString();
 

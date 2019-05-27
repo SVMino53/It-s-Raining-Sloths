@@ -5603,7 +5603,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294682675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294617b2d1a3bb849b90342cb4083d59, type: 3}
   m_Name: 
@@ -7750,7 +7750,7 @@ MonoBehaviour:
   rockPrefab: {fileID: 8776726110610763589, guid: d9bf21df35f79ed418e950ff237ca33c,
     type: 3}
   rockSpawner: {fileID: 2077381300}
-  NextSceneName: Play Test
+  NextSceneName: Isak Test Scene
 --- !u!1001 &1733705209
 PrefabInstance:
   m_ObjectHideFlags: 0

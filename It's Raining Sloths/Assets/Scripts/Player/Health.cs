@@ -9,6 +9,19 @@ public class Health : MonoBehaviour
     int nLives = 5;
     [SerializeField]
     float dizzyTime = 5;
+    [SerializeField]
+    GameObject ScoreTextObj = null;
+    [SerializeField]
+    GameObject SystemsObj = null;
+    [SerializeField]
+    GameObject Canvas_EyesObj = null;
+    [SerializeField]
+    GameObject SliderObj = null;
+
+    Move_Mouse Move_MouseComp = null;
+    Rotate_Analog Rotate_AnalogComp = null;
+    ArmsController_Test ArmsController_TestComp = null;
+    ArmAnimationController ArmAnimationControllerComp = null;
 
     float startTime;
     bool timerIsOn;
@@ -18,6 +31,14 @@ public class Health : MonoBehaviour
     float timer;
     void Start()
     {
+        Move_MouseComp = GetComponent<Move_Mouse>();
+        Rotate_AnalogComp = GetComponent<Rotate_Analog>();
+        ArmsController_TestComp = GetComponent<ArmsController_Test>();
+        ArmAnimationControllerComp = GetComponent<ArmAnimationController>();
+
+        ScoreTextObj.SetActive(false);
+        SystemsObj.SetActive(true);
+        Canvas_EyesObj.SetActive(true);
         startTime = Time.time;
         stars.GetComponent<Stars>().Activate(false);
     }
@@ -27,9 +48,20 @@ public class Health : MonoBehaviour
         Timer();
         if (nLives <= 0)
         {
-            GlobalVars.PlayerScore = 2540L;
+            //GlobalVars.PlayerScore = 2540L;
 
-            SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
+            //SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
+
+            Move_MouseComp.enabled = false;
+            Rotate_AnalogComp.enabled = false;
+            ArmsController_TestComp.enabled = false;
+            ArmAnimationControllerComp.enabled = false;
+
+            ScoreTextObj.SetActive(true);
+            SystemsObj.SetActive(false);
+            Canvas_EyesObj.SetActive(false);
+
+            SliderObj.GetComponent<HeightBar>().enabled = false;
         }
     }
 

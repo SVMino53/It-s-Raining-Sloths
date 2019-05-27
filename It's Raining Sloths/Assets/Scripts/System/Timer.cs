@@ -26,14 +26,17 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Seconds = (int)GetTimeLeft() % 60;
-        Minutes = (int)GetTimeLeft() / 60;
+        GlobalVars.GameTime = (int)GetTimeLeft();
+
+        Seconds = GlobalVars.GameTime % 60;
+        Minutes = GlobalVars.GameTime / 60;
 
         if(Time.time - StartTime>=LevelLength && !playerReachedTheTop)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().countPoints(GetTimeLeft());
         }
-        else if(Seconds >= 10)
+
+        if (Seconds >= 10)
         {
             TimeText.text = Minutes.ToString() + ":" + Seconds.ToString();
         }
