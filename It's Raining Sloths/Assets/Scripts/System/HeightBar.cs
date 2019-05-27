@@ -25,7 +25,7 @@ public class HeightBar : MonoBehaviour
     {
         if (player != null)
             curPos = player.GetComponent<GeneralMovement>().GetCurPosY();
-        GetComponent<Slider>().value = curPos/(treeHeight - treeTopLength);
-        
+        GlobalVars.Progress = curPos/(treeHeight - treeTopLength);
+        GetComponent<Slider>().value = GlobalVars.Progress;
     }
 }

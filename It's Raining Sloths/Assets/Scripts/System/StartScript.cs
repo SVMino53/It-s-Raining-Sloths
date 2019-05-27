@@ -14,6 +14,10 @@ public class StartScript : MonoBehaviour
 
     private void Start()
     {
+        GlobalVars.GameTime = 0;
+        GlobalVars.PlayerScore = 0L;
+        GlobalVars.Progress = 0.0f;
+        GlobalVars.SlothCount = 0;
     }
     // Update is called once per frame
     void Update()

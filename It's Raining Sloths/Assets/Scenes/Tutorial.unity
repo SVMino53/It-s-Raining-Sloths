@@ -3421,6 +3421,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 4.936368
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.79833686
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -7.9999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -2.918313
+      objectReference: {fileID: 0}
     - target: {fileID: 3950440136395622759, guid: 993c5157cef140944bb36c79a588d44d,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -3460,26 +3480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.2268
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
-        type: 3}
-      propertyPath: m_Radius
-      value: 4.936368
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.79833686
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -7.9999995
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300363767821950322, guid: 993c5157cef140944bb36c79a588d44d,
-        type: 3}
-      propertyPath: m_Center.x
-      value: -2.918313
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 993c5157cef140944bb36c79a588d44d, type: 3}
@@ -5590,7 +5590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294682675}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee6d5202434edb544a9178a1a4dd4344, type: 3}
   m_Name: 
@@ -5603,7 +5603,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294682675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294617b2d1a3bb849b90342cb4083d59, type: 3}
   m_Name: 
@@ -7750,7 +7750,7 @@ MonoBehaviour:
   rockPrefab: {fileID: 8776726110610763589, guid: d9bf21df35f79ed418e950ff237ca33c,
     type: 3}
   rockSpawner: {fileID: 2077381300}
-  NextSceneName: Play Test
+  NextSceneName: Isak Test Scene
 --- !u!1001 &1733705209
 PrefabInstance:
   m_ObjectHideFlags: 0

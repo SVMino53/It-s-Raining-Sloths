@@ -27,6 +27,8 @@ public class CatchDetection : MonoBehaviour
             if(player!=null) 
                 player.GetComponent<Score>().AddToScore(nPointsForCatching);
 
+            GlobalVars.SlothCount += nPointsForCatching;
+
             if (GameObject.Find("Systems").GetComponent<Timer>())
                 GameObject.Find("Systems").GetComponent<Timer>().AddToTime(TimeBonus);
 
