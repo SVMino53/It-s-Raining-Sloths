@@ -22,22 +22,42 @@ public class AddScore : MonoBehaviour
     [SerializeField]
     float ProgressMultiplier = 20.0f;
     [SerializeField]
-    float Delay = 0.2f;
+    float ProgressInterval = 0.005f;
+    [SerializeField]
+    float TreeTopBonus = 1000.0f;
+    [SerializeField]
+    float Delay = 0.01f;
+    [SerializeField]
+    float ExtraDelay = 1.0f;
     [SerializeField]
     string NextSceneName = "HighScore";
+    [SerializeField]
+    AudioSource PointsSound = null;
+    [SerializeField]
+    float SoundDelay = 0.08f;
 
     float CurrentDelay = 0.0f;
+    float CurrentSoundDelay = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerScoreText.enabled = true;
+        CurrentDelay = -ExtraDelay;
+        CurrentSoundDelay = -ExtraDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
         CurrentDelay += Time.deltaTime;
+        CurrentSoundDelay += Time.deltaTime;
+
+        if (CurrentSoundDelay >= SoundDelay)
+        {
+            PointsSound.Play();
+            CurrentSoundDelay = 0.0f;
+        }
 
         if (CurrentDelay >= Delay)
         {
@@ -47,19 +67,52 @@ public class AddScore : MonoBehaviour
             {
                 GlobalVars.SlothCount--;
                 GlobalVars.PlayerScore += SlothCountMultiplier;
-                SlothCountText.text = GlobalVars.SlothCount.ToString();
+
+                if (GlobalVars.SlothCount <= 0)
+                {
+                    CurrentDelay = -ExtraDelay;
+                    CurrentSoundDelay = -ExtraDelay;
+                }
             }
             else if (GlobalVars.GameTime > 0)
             {
                 GlobalVars.GameTime--;
                 GlobalVars.PlayerScore += TimeMultiplier;
-                TimeText.text = GlobalVars.GameTime.ToString();
+
+                int Seconds = GlobalVars.GameTime % 60;
+                int Minutes = GlobalVars.GameTime / 60;
+
+                if (Seconds >= 10)
+                {
+                    TimeText.text = Minutes.ToString() + ":" + Seconds.ToString();
+                }
+                else
+                {
+                    TimeText.text = Minutes.ToString() + ":0" + Seconds.ToString();
+                }
+
+                if (GlobalVars.GameTime <= 0)
+                {
+                    CurrentDelay = -ExtraDelay;
+                    CurrentSoundDelay = -ExtraDelay;
+                }
+            }
+            else if (GlobalVars.OnTreeTop)
+            {
+                GlobalVars.OnTreeTop = false;
+                GlobalVars.PlayerScore += TreeTopBonus;
+
+                if (!GlobalVars.OnTreeTop)
+                {
+                    CurrentDelay = -ExtraDelay;
+                    CurrentSoundDelay = -ExtraDelay;
+                }
             }
             else if (GlobalVars.Progress > 0.0f)
             {
-                if (GlobalVars.Progress >= 0.01f)
+                if (GlobalVars.Progress >= ProgressInterval)
                 {
-                    GlobalVars.Progress -= 0.01f;
+                    GlobalVars.Progress -= ProgressInterval;
                 }
                 else
                 {
@@ -68,6 +121,12 @@ public class AddScore : MonoBehaviour
 
                 GlobalVars.PlayerScore += ProgressMultiplier;
                 ProgressSlider.value = GlobalVars.Progress;
+
+                if (GlobalVars.Progress <= 0.0f)
+                {
+                    CurrentDelay = -ExtraDelay;
+                    CurrentSoundDelay = -ExtraDelay;
+                }
             }
             else
             {

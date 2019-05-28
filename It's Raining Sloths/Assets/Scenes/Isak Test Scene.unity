@@ -2261,6 +2261,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275900766}
   m_CullTransparentMesh: 0
+--- !u!1 &278594265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278594267}
+  - component: {fileID: 278594266}
+  m_Layer: 0
+  m_Name: PointsSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &278594266
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278594265}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 800f145f0aa41264991d730b5ec112d7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &278594267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278594265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 247.9521, y: 170.89403, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &322895267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2433,7 +2560,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
@@ -6022,6 +6149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e116567fb2637364db42e3b158567b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreTextObj: {fileID: 1925302602}
+  SystemsObj: {fileID: 1829436487}
+  Canvas_EyesObj: {fileID: 1138551163}
+  SliderObj: {fileID: 695575}
+  PlayerObj: {fileID: 1973190443}
 --- !u!54 &1003708173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10807,7 +10939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1828410699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10884,7 +11016,6 @@ GameObject:
   - component: {fileID: 1829436490}
   - component: {fileID: 1829436489}
   - component: {fileID: 1829436488}
-  - component: {fileID: 1829436495}
   m_Layer: 0
   m_Name: Systems
   m_TagString: System
@@ -10924,7 +11055,7 @@ MonoBehaviour:
   DistanceFromPlayer: 20
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 6
+  spawnRate: 1
   treeHeight: 0
   spawner: {fileID: 1704442826}
   defaultTreeHeight: 70
@@ -10949,7 +11080,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829436487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71ab5dff9eb3a6647a865a422ef837cf, type: 3}
   m_Name: 
@@ -10970,16 +11101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objs:
-  - {fileID: 5811879029178967797, guid: 2c033315b2e56fb4bb81a5470fe410ab, type: 3}
-  - {fileID: 1595667402967474405, guid: 33422dfe67601714b8ab52dcdb4ea732, type: 3}
-  - {fileID: 657683911986265478, guid: c1b1e2d41b6bbb74db34c6ec4ed22c1d, type: 3}
-  - {fileID: 7429878983492154297, guid: 6fb7b144f883a674ea6f928f9a6cd3e7, type: 3}
-  - {fileID: 2788746097249589744, guid: b61964a0075351f41bcd657394f53791, type: 3}
+  - {fileID: 8776726110610763589, guid: d9bf21df35f79ed418e950ff237ca33c, type: 3}
   numberOfLanes: 5
   DistanceFromPlayer: 30
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 2
+  spawnRate: 5
   treeHeight: 0
   spawner: {fileID: 1704442826}
   defaultTreeHeight: 70
@@ -11024,27 +11151,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1829436495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829436487}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273a8b36424e06d438bd1f54924c636d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerScoreText: {fileID: 1925302605}
-  SlothCountText: {fileID: 488360530}
-  TimeText: {fileID: 329295366}
-  ProgressSlider: {fileID: 695578}
-  SlothCountMultiplier: 50
-  TimeMultiplier: 10
-  ProgressMultiplier: 20
-  Delay: 0.2
-  NextSceneName: HighScore
 --- !u!1001 &1837319487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11727,7 +11833,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: New Text
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9efa50360ed51974ca01203d1e28e3f3, type: 2}
   m_sharedMaterial: {fileID: 21317191897710030, guid: 9efa50360ed51974ca01203d1e28e3f3,
@@ -11805,11 +11911,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -11840,10 +11946,15 @@ MonoBehaviour:
   TimeText: {fileID: 329295366}
   ProgressSlider: {fileID: 695578}
   SlothCountMultiplier: 50
-  TimeMultiplier: 10
+  TimeMultiplier: 2
   ProgressMultiplier: 20
-  Delay: 0.05
+  ProgressInterval: 0.005
+  TreeTopBonus: 1000
+  Delay: 0.01
+  ExtraDelay: 1
   NextSceneName: HighScore
+  PointsSound: {fileID: 278594266}
+  SoundDelay: 0.01
 --- !u!1001 &1947537252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12158,6 +12269,7 @@ MonoBehaviour:
   SystemsObj: {fileID: 1829436487}
   Canvas_EyesObj: {fileID: 1138551163}
   SliderObj: {fileID: 695575}
+  Music: {fileID: 1750475544}
   stars: {fileID: 1769713816}
 --- !u!114 &1973190451
 MonoBehaviour:
@@ -12177,7 +12289,7 @@ MonoBehaviour:
   CatchLeft: 102
   CatchRight: 103
   AnimationSpeed: 0.005
-  ReachTime: 5
+  ReachTime: 1
 --- !u!114 &1973190452
 MonoBehaviour:
   m_ObjectHideFlags: 0

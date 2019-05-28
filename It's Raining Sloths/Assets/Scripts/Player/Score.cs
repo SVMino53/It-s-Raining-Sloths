@@ -18,12 +18,14 @@ public class Score : MonoBehaviour
     {
         if(pointsText)
             pointsText.text = "Points Placeholder";
+        score = 0;
+        GlobalVars.SlothCount = 0;
     }
 
     private void Update()
     {
         if (pointsText)
-            pointsText.text = "Sloth\nCount\n" + score.ToString();
+            pointsText.text = "Sloth\nCount\n" + GlobalVars.SlothCount.ToString();
     }
 
     public float GetScore()

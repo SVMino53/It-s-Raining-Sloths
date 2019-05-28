@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class HighScoreInitials : MonoBehaviour
@@ -67,11 +68,15 @@ public class HighScoreInitials : MonoBehaviour
         }
         else if (Input.GetKeyDown(RightButton))
         {
+            CurrentInitialLetter.text = CurrentLetter.ToString(); ;
+
             string Initials = GetInitials();
             
             gameObject.GetComponent<ScoreBoard>().AddHighScore(Initials, PlayerScore);
 
             DoDisable = true;
+
+            SceneManager.LoadScene("Menu Scene");
         }
 
         if (CurrentBlinkingTime > BlinkingTime)
@@ -90,7 +95,7 @@ public class HighScoreInitials : MonoBehaviour
 
         CurrentBlinkingTime += Time.deltaTime;
 
-        CurrentScrollCooldown += Input.GetAxis("Mouse Y");
+        CurrentScrollCooldown += Input.GetAxis("Mouse X");
 
         if (CurrentScrollCooldown < 0.0f)
         {

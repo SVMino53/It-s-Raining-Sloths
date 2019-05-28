@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
     GameObject Canvas_EyesObj = null;
     [SerializeField]
     GameObject SliderObj = null;
+    [SerializeField]
+    AudioSource Music = null;
 
     Move_Mouse Move_MouseComp = null;
     Rotate_Analog Rotate_AnalogComp = null;
@@ -36,9 +38,9 @@ public class Health : MonoBehaviour
         ArmsController_TestComp = GetComponent<ArmsController_Test>();
         ArmAnimationControllerComp = GetComponent<ArmAnimationController>();
 
-        ScoreTextObj.SetActive(false);
-        SystemsObj.SetActive(true);
-        Canvas_EyesObj.SetActive(true);
+        //ScoreTextObj.SetActive(false);
+        //SystemsObj.SetActive(true);
+        //Canvas_EyesObj.SetActive(true);
         startTime = Time.time;
         stars.GetComponent<Stars>().Activate(false);
     }
@@ -51,6 +53,8 @@ public class Health : MonoBehaviour
             //GlobalVars.PlayerScore = 2540L;
 
             //SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
+
+            Music.Stop();
 
             Move_MouseComp.enabled = false;
             Rotate_AnalogComp.enabled = false;
