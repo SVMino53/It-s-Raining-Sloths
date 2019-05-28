@@ -54,7 +54,7 @@ public class GeneralMovement : MonoBehaviour
         {
             GetComponent<BounceDown>().Bounce(speed);
             GetComponent<CollisionCheck>().SetColliding(false);
-            GetComponent<Health>().Decrease();
+            //GetComponent<Health>().Decrease();
         }
         if (moving)
         {

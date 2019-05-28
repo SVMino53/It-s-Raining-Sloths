@@ -52,7 +52,7 @@ public class Health : MonoBehaviour
         {
             //GlobalVars.PlayerScore = 2540L;
 
-            //SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
+            SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
 
             Music.Stop();
 

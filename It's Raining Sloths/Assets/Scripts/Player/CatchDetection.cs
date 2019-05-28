@@ -26,7 +26,7 @@ public class CatchDetection : MonoBehaviour
             if (player != null)
             {
                 player.GetComponent<Score>().AddToScore(nPointsForCatching);
-                //player.GetComponent<ParticleController>().PlayParticle(gameObject.name);
+                player.GetComponent<ParticleController>().PlayParticle(gameObject.name);
             }
 
             GlobalVars.SlothCount += nPointsForCatching;

@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextSceneName: Video
   allowedKeys: 6600000067000000
-  useMat: 0
+  useMat: 1
 --- !u!4 &699776983
 Transform:
   m_ObjectHideFlags: 0

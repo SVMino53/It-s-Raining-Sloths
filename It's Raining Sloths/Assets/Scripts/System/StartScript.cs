@@ -28,7 +28,7 @@ public class StartScript : MonoBehaviour
                 SceneManager.LoadScene(NextSceneName); 
         }
 
-        if(Input.GetAxis("Mouse Y") < 0 && useMat)
+        if(Input.GetAxis("Mouse X") != 0 && useMat)
              SceneManager.LoadScene(NextSceneName);
     }
 }

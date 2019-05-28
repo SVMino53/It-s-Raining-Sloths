@@ -433,6 +433,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e116567fb2637364db42e3b158567b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreTextObj: {fileID: 0}
+  SystemsObj: {fileID: 0}
+  Canvas_EyesObj: {fileID: 0}
+  SliderObj: {fileID: 0}
+  PlayerObj: {fileID: 0}
 --- !u!54 &65523442
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5390,6 +5395,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nLives: 5
   dizzyTime: 5
+  ScoreTextObj: {fileID: 0}
+  SystemsObj: {fileID: 0}
+  Canvas_EyesObj: {fileID: 0}
+  SliderObj: {fileID: 0}
+  Music: {fileID: 0}
   stars: {fileID: 291352275}
 --- !u!114 &1294682677
 MonoBehaviour:
@@ -7750,7 +7760,7 @@ MonoBehaviour:
   rockPrefab: {fileID: 8776726110610763589, guid: d9bf21df35f79ed418e950ff237ca33c,
     type: 3}
   rockSpawner: {fileID: 2077381300}
-  NextSceneName: Isak Test Scene
+  NextSceneName: Play Test
 --- !u!1001 &1733705209
 PrefabInstance:
   m_ObjectHideFlags: 0
