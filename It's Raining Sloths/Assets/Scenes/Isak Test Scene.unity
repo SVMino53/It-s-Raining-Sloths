@@ -11037,6 +11037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelLength: 120
   TimeText: {fileID: 329295366}
+  ScoreTextObj: {fileID: 0}
 --- !u!114 &1829436489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11954,7 +11955,7 @@ MonoBehaviour:
   ExtraDelay: 1
   NextSceneName: HighScore
   PointsSound: {fileID: 278594266}
-  SoundDelay: 0.01
+  SoundDelay: 0.08
 --- !u!1001 &1947537252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12289,7 +12290,7 @@ MonoBehaviour:
   CatchLeft: 102
   CatchRight: 103
   AnimationSpeed: 0.005
-  ReachTime: 1
+  ReachTime: 0.2
 --- !u!114 &1973190452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12415,7 +12416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CatchLeft: 102
   CatchRight: 103
-  activePhaseLength: 5
+  activePhaseLength: 0.2
   LeftArmName: Detector_Left
   RightArmName: Detector_Right
 --- !u!1001 &2000334323

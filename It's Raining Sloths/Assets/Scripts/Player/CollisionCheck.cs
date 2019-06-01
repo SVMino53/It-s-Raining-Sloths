@@ -9,6 +9,8 @@ public class CollisionCheck : MonoBehaviour
     Collider myCollider;
     float radius = 10f;
     bool colliding = false;
+    [SerializeField]
+    float PlayerBranchDistance = 0.2f;
 
     [SerializeField] int collisionBuffer = 10;
 
@@ -38,7 +40,7 @@ public class CollisionCheck : MonoBehaviour
             if (collider == myCollider)
                 continue;
 
-            if (collider.gameObject.CompareTag("Branch") && collider.gameObject.transform.position.y >= myCollider.gameObject.transform.position.y)   
+            if (collider.gameObject.CompareTag("Branch") && collider.gameObject.transform.position.y >= myCollider.gameObject.transform.position.y + PlayerBranchDistance)   
             {
 
                 Vector3 otherPosition = collider.transform.position;

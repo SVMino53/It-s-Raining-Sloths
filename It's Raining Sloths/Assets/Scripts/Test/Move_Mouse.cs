@@ -10,14 +10,11 @@ public class Move_Mouse : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetAxis("Mouse X") > 0)
-        {
-            float YMovement = Input.GetAxis("Mouse X") * speed;
+        float YMovement = -Input.GetAxis("Mouse X") * speed;
             
-            if (YMovement < speed * -1.5) YMovement = speed * 1.5f;
+        if (YMovement < speed * -1.5) YMovement = speed * 1.5f;
             
-            GetComponent<GeneralMovement>().SetSpeed(Mathf.Abs(YMovement));
-            GetComponent<GeneralMovement>().Move();
-        }
+        GetComponent<GeneralMovement>().SetSpeed(Mathf.Abs(YMovement));
+        GetComponent<GeneralMovement>().Move();
     }
 }

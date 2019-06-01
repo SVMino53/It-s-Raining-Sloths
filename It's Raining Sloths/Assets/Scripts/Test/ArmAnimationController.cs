@@ -38,7 +38,7 @@ public class ArmAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Mouse Y") < 0)
+        if (Input.GetAxis("Mouse X") < 0)
         {
             AnimTime += AnimationSpeed;
         }

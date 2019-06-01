@@ -29,14 +29,17 @@ public class Timer : MonoBehaviour
     void Update()
     {
         GlobalVars.GameTime = (int)GetTimeLeft();
-        if (GlobalVars.GameTime == 0) GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().SetLives(0);
+        if (GlobalVars.GameTime == 0)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().SetLives(0);
+        }
         Seconds = GlobalVars.GameTime % 60;
         Minutes = GlobalVars.GameTime / 60;
 
-        if(Time.time - StartTime>=LevelLength && !playerReachedTheTop)
-        {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().countPoints(GetTimeLeft());
-        }
+        //if(Time.time - StartTime>=LevelLength)
+        //{
+        //    GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().countPoints(GetTimeLeft());
+        //}d
 
         if (Seconds >= 10)
         {
