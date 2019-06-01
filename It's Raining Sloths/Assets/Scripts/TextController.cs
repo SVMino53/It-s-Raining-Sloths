@@ -9,6 +9,11 @@ using TMPro;
 public class TextController : MonoBehaviour
 {
     [SerializeField]
+    KeyCode SkipButton = KeyCode.J;
+    [SerializeField]
+    TextMeshProUGUI SkipText;
+
+    [SerializeField]
     TextMeshProUGUI ClimbText;
     [SerializeField]
     string ClimbStr = "Move mat to climb!";
@@ -20,12 +25,16 @@ public class TextController : MonoBehaviour
     [SerializeField]
     string RotateStr = "Balance to avoid branches and rocks!";
     [SerializeField]
+    string RotateStrAlt = "Use buttons on sides to avoid branches and rocks!";
+    [SerializeField]
     Image rotateImage;
 
     [SerializeField]
     TextMeshProUGUI CatchText;
     [SerializeField]
     string CatchStr = "Press buttons to catch the babies!";
+    [SerializeField]
+    string CatchStrAlt = "Let the babies fall into your arms";
     [SerializeField]
     Image[] catchImage;
 
@@ -45,8 +54,10 @@ public class TextController : MonoBehaviour
     [SerializeField]
     string NextSceneName = "Play Test";
 
-    GameObject player; 
-    
+    GameObject player;
+
+    KeyCode rotateRight;
+    KeyCode rotateLeft;
 
     bool climbFinished = false;
     bool rotateFinished = false;
@@ -55,6 +66,13 @@ public class TextController : MonoBehaviour
 
     void Start()
     {
+        if (!GlobalVars.SpecialMode)
+            SkipText.text = "Press 'Skip' to skip the tutorial";
+        else {
+            //change skip button
+            SkipText.text = "Press SMTH to skip the tutorial";
+        }
+
         ClimbText.text = ClimbStr;
 
         rotateImage.enabled = false;
@@ -66,14 +84,22 @@ public class TextController : MonoBehaviour
         else Debug.Log("Add 2 press button images");
 
         player = GameObject.Find("Player");
+        rotateLeft = player.GetComponent<Rotate_Analog>().GetLeft();
+        rotateRight = player.GetComponent<Rotate_Analog>().GetRight();
         player.GetComponent<Rotate_Analog>().enabled = false;
+
+        if (GlobalVars.SpecialMode) {
+            RotateStr = RotateStrAlt;
+            CatchStr = CatchStrAlt;
+            SkipButton = KeyCode.A;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(Input.GetAxis("Mouse Y") > 0)
-        //    SceneManager.LoadScene(NextSceneName);
+        if(Input.GetKeyDown(SkipButton))
+            SceneManager.LoadScene(NextSceneName);
 
         if (ClimbText.text == ClimbStr)
         {
@@ -85,7 +111,7 @@ public class TextController : MonoBehaviour
 
         if(RotateText.text == RotateStr)
         {
-            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
+            if ((Input.GetKeyDown(rotateRight) || Input.GetKeyDown(rotateLeft)))
             {
                 StartCoroutine(Wait(RotateStr));
             }
@@ -128,7 +154,6 @@ public class TextController : MonoBehaviour
             CatchText.text = "";
             GoodJobText.text = GoodJobStr;
             player.GetComponent<Rotate_Analog>().enabled = false;
-            //player.GetComponent<GeneralMovement>().moving = false;
             if (catchImage.Length == 2)
             {
                 catchImage[0].enabled = false;
@@ -140,21 +165,33 @@ public class TextController : MonoBehaviour
             RotateText.text = "";
             CatchText.text = CatchStr;
             rotateImage.enabled = false;
-            if (catchImage.Length == 2)
+            if (catchImage.Length == 2 && !GlobalVars.SpecialMode)
             {
                 catchImage[0].enabled = true;
                 catchImage[1].enabled = true;
+            }
+            if(GlobalVars.SpecialMode)
+            {
+                catchImage[0].enabled = false;
+                catchImage[1].enabled = false;
             }
             GameObject.Find("Systems").GetComponent<SpawnSlothBaby>().enabled = true;
             player.GetComponent<GeneralMovement>().moving = true;
         }
         else if (climbFinished)
         {
+            
             ClimbText.text = "";
             RotateText.text = RotateStr;
             player.GetComponent<Rotate_Analog>().enabled = true;
             player.GetComponent<GeneralMovement>().moving = false;
-            rotateImage.enabled = true;
+            if(!GlobalVars.SpecialMode)
+                rotateImage.enabled = true;
+            else
+            {
+                catchImage[0].enabled = true;
+                catchImage[1].enabled = true;
+            }
             climbingImage.enabled = false;
             if (rockPrefab)
             {

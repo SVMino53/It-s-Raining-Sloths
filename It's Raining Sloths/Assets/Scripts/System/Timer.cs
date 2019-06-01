@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     float LevelLength = 120.0f;
     [SerializeField]
     TextMeshProUGUI TimeText;
+    [SerializeField]
+    GameObject ScoreTextObj = null;
 
     float StartTime;
     int Seconds = 0;
@@ -27,7 +29,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         GlobalVars.GameTime = (int)GetTimeLeft();
-
+        if (GlobalVars.GameTime == 0) GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().SetLives(0);
         Seconds = GlobalVars.GameTime % 60;
         Minutes = GlobalVars.GameTime / 60;
 
@@ -48,7 +50,9 @@ public class Timer : MonoBehaviour
 
     public float GetTimeLeft()
     {
-        return LevelLength - (Time.time - StartTime);
+        if (LevelLength - (Time.time - StartTime) > 0)
+            return LevelLength - (Time.time - StartTime);
+        else return 0;
     }
 
     public void AddToTime(float sec)

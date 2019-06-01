@@ -52,8 +52,9 @@ public class Health : MonoBehaviour
         {
             //GlobalVars.PlayerScore = 2540L;
 
-            SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
+            //SceneManager.LoadScene("HighScore", LoadSceneMode.Single);
 
+            ScoreTextObj.GetComponent<AddScore>().enabled = true;
             Music.Stop();
 
             Move_MouseComp.enabled = false;
@@ -97,5 +98,10 @@ public class Health : MonoBehaviour
     int GetNumLives()
     {
         return nLives;
+    }
+
+    public void SetLives(int num)
+    {
+        nLives = num;
     }
 }

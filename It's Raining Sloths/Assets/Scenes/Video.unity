@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: Tutorial
-  allowedKeys: 6600000067000000
+  allowedKeys: 66000000670000006a0000006b000000
   useMat: 0
 --- !u!1 &809131776
 GameObject:

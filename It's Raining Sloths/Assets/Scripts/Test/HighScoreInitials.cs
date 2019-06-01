@@ -32,6 +32,11 @@ public class HighScoreInitials : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(GlobalVars.SpecialMode)
+        {
+            LeftButton = KeyCode.K;
+            RightButton = KeyCode.J;
+        }
         PlayerScore = (long)GlobalVars.PlayerScore;
 
         PlayerScoreText.text = PlayerScore.ToString();

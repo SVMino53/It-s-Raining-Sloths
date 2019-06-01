@@ -9,4 +9,5 @@ public static class GlobalVars
     public static int SlothCount = 0;
     public static float Progress = 0.0f;
     public static bool OnTreeTop = false;
+    public static bool SpecialMode = false;
 }

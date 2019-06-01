@@ -24,6 +24,7 @@ public class TreeTopScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerObj = GameObject.Find("Player");
         Move_MouseComp = PlayerObj.GetComponent<Move_Mouse>();
         Rotate_AnalogComp = PlayerObj.GetComponent<Rotate_Analog>();
         ArmsController_TestComp = PlayerObj.GetComponent<ArmsController_Test>();
