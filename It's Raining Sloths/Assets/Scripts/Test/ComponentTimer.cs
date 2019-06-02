@@ -12,7 +12,7 @@ public class ComponentTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ExecutionTime <= Time.time)
+        if (ExecutionTime <= Time.timeSinceLevelLoad)
         {
             ActivateScript.enabled = true;
         }

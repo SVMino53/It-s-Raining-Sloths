@@ -10,6 +10,6 @@ public class AnimationTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Animator>().SetFloat(ParameterName ,Time.time);
+        GetComponent<Animator>().SetFloat(ParameterName ,Time.timeSinceLevelLoad);
     }
 }
