@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 139182716}
   - component: {fileID: 139182717}
   - component: {fileID: 139182719}
+  - component: {fileID: 139182720}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -307,6 +308,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &139182720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139182715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465df7d1ae9db68448e04c427bd8bb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParameterName: ExecutionTime
 --- !u!1 &195966813
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233716413}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -405,7 +419,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.4990001
+  m_padding: 0
   m_canvasRenderer: {fileID: 233716416}
   m_TextComponent: {fileID: 1084450101}
   m_materialReferenceIndex: 1
@@ -988,6 +1002,7 @@ GameObject:
   - component: {fileID: 714445248}
   - component: {fileID: 714445247}
   - component: {fileID: 714445249}
+  - component: {fileID: 714445250}
   m_Layer: 5
   m_Name: Image_Time
   m_TagString: Untagged
@@ -1071,6 +1086,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &714445250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714445245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465df7d1ae9db68448e04c427bd8bb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParameterName: ExecutionTime
 --- !u!1 &910470054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,13 +1254,16 @@ GameObject:
   - component: {fileID: 1084450103}
   - component: {fileID: 1084450101}
   - component: {fileID: 1084450102}
+  - component: {fileID: 1084450104}
+  - component: {fileID: 1084450105}
+  - component: {fileID: 1084450106}
   m_Layer: 5
   m_Name: TMP_Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1084450100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1250,7 +1281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.000032565, y: 610}
   m_SizeDelta: {x: 270.36, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084450101
@@ -1351,11 +1382,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1376,7 +1407,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084450099}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 273a8b36424e06d438bd1f54924c636d, type: 3}
   m_Name: 
@@ -1403,6 +1434,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084450099}
   m_CullTransparentMesh: 0
+--- !u!95 &1084450104
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084450099}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3645efb579d6b494a9bba1d9c1c4ed65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1084450105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084450099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465df7d1ae9db68448e04c427bd8bb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParameterName: ExecutionTime
+--- !u!114 &1084450106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084450099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09b59404d49cf2499e302a27909de85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivateScript: {fileID: 1084450102}
+  ExecutionTime: 6
 --- !u!1 &1125735761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1843,7 @@ GameObject:
   - component: {fileID: 1836626284}
   - component: {fileID: 1836626283}
   - component: {fileID: 1836626285}
+  - component: {fileID: 1836626286}
   m_Layer: 5
   m_Name: Image_SlothCount
   m_TagString: Untagged
@@ -1849,6 +1927,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1836626286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836626281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465df7d1ae9db68448e04c427bd8bb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParameterName: ExecutionTime
 --- !u!1 &1838198707
 GameObject:
   m_ObjectHideFlags: 0
