@@ -46,13 +46,15 @@ public class TreeTopScript : MonoBehaviour
             ArmsController_TestComp.enabled = false;
             ArmAnimationControllerComp.enabled = false;
 
-            ScoreTextObj.SetActive(true);
-            SystemsObj.SetActive(false);
-            Canvas_EyesObj.SetActive(false);
+            //ScoreTextObj.SetActive(true);
+            //SystemsObj.SetActive(false);
+            //Canvas_EyesObj.SetActive(false);
 
-            SliderObj.GetComponent<HeightBar>().enabled = false;
+            //SliderObj.GetComponent<HeightBar>().enabled = false;
 
             GlobalVars.OnTreeTop = true;
+
+            PlayerObj.GetComponent<Health>().SetLives(0);
         }
     }
 }

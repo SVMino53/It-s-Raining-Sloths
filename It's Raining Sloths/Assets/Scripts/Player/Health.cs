@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
     string TransitionImageName = "White";
     [SerializeField]
     string DeathSceneName = "DeathScene";
+    [SerializeField]
+    string WinSceneName = "WinScene";
 
     Move_Mouse Move_MouseComp = null;
     Rotate_Analog Rotate_AnalogComp = null;
@@ -79,7 +81,14 @@ public class Health : MonoBehaviour
 
             if (TransitionImageObj.GetComponent<Image>().color.a >= 1.0f)
             {
-                SceneManager.LoadScene(DeathSceneName, LoadSceneMode.Single);
+                if (GlobalVars.OnTreeTop)
+                {
+                    SceneManager.LoadScene(WinSceneName, LoadSceneMode.Single);
+                }
+                else
+                {
+                    SceneManager.LoadScene(DeathSceneName, LoadSceneMode.Single);
+                }
             }
         }
     }
