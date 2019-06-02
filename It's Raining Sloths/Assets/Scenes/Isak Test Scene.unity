@@ -1214,6 +1214,8 @@ MonoBehaviour:
   BlurSpeed: 0.01
   LeftRotateKey: 97
   RightRotateKey: 100
+  LeftRotateKeyAlt: 106
+  RightRotateKeyAlt: 107
   CurVelocity: 0
   CurDelay: 0
 --- !u!114 &138045318
@@ -2222,6 +2224,8 @@ MonoBehaviour:
   BlurSpeed: 0.01
   LeftRotateKey: 97
   RightRotateKey: 100
+  LeftRotateKeyAlt: 106
+  RightRotateKeyAlt: 107
   CurVelocity: 0
   CurDelay: 0
 --- !u!114 &275900769
@@ -3806,11 +3810,11 @@ MeshRenderer:
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_ReflectionProbeUsage: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e71bcfecfcfc64b4493d32bbdf051f26, type: 2}
+  - {fileID: 2100000, guid: a8f624d2dc2bc124697fc3e466dac657, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12237,6 +12241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.201
+  allowedStillTime: 5
 --- !u!114 &1973190449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12271,6 +12276,9 @@ MonoBehaviour:
   Canvas_EyesObj: {fileID: 1138551163}
   SliderObj: {fileID: 695575}
   Music: {fileID: 1750475544}
+  TransitionImageName: White
+  DeathSceneName: DeathScene
+  WinSceneName: WinScene
   stars: {fileID: 1769713816}
 --- !u!114 &1973190451
 MonoBehaviour:
@@ -12401,6 +12409,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  PlayerBranchDistance: 0.2
   collisionBuffer: 10
 --- !u!114 &1973190459
 MonoBehaviour:
