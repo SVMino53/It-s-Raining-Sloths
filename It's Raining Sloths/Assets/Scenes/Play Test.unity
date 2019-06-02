@@ -2677,6 +2677,8 @@ MonoBehaviour:
   BlurSpeed: 0.01
   LeftRotateKey: 97
   RightRotateKey: 100
+  LeftRotateKeyAlt: 106
+  RightRotateKeyAlt: 107
   CurVelocity: 0
   CurDelay: 0
 --- !u!114 &337316477
@@ -27322,8 +27324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0018005, y: -0.0014191}
-  m_SizeDelta: {x: 800, y: 449.84}
+  m_AnchoredPosition: {x: -0.000095367, y: -0.00012589}
+  m_SizeDelta: {x: 1022.4, y: 574.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895620460
 MonoBehaviour:
@@ -27612,7 +27614,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -31116,6 +31118,7 @@ MonoBehaviour:
   particleLength: 1
   LeftArmName: Detector_Left
   RightArmName: Detector_Right
+  HeadName: Detector_Middle
 --- !u!1 &1424368617
 GameObject:
   m_ObjectHideFlags: 0
@@ -34018,6 +34021,7 @@ MonoBehaviour:
   SliderObj: {fileID: 1755904253}
   Music: {fileID: 1363564713}
   TransitionImageName: White
+  DeathSceneName: DeathScene
   stars: {fileID: 1502720461}
 --- !u!114 &1835343327
 MonoBehaviour:
@@ -34034,6 +34038,7 @@ MonoBehaviour:
   particleLength: 6.46
   LeftArmName: Detector_Left
   RightArmName: Detector_Right
+  HeadName: Detector_Middle
 --- !u!114 &1835343328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35425,6 +35430,8 @@ MonoBehaviour:
   BlurSpeed: 0.01
   LeftRotateKey: 97
   RightRotateKey: 100
+  LeftRotateKeyAlt: 106
+  RightRotateKeyAlt: 107
   CurVelocity: 0
   CurDelay: 0
 --- !u!114 &2008218289
