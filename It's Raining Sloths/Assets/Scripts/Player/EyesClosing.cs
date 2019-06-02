@@ -83,7 +83,9 @@ public class EyesClosing : MonoBehaviour
         
         if (Mathf.Abs(transform.localPosition.y) <= Mathf.Abs(ClosedY))
         {
-            SceneManager.LoadScene("Menu Scene");
+            Health HealthScript = PlayerObj.GetComponent<Health>();
+            HealthScript.SetLives(0);
+            enabled = false;
         }
 
         PrevPosY = PlayerObj.transform.position.y;
