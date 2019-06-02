@@ -52,8 +52,13 @@ public class GeneralMovement : MonoBehaviour
 
         if (GetComponent<CollisionCheck>().Colliding() && moving)
         {
+            //
+            moving = false;
+            //
+            Waiting();
             GetComponent<BounceDown>().Bounce(speed);
             GetComponent<CollisionCheck>().SetColliding(false);
+            
             //GetComponent<Health>().Decrease();
         }
         if (moving)
@@ -80,5 +85,11 @@ public class GeneralMovement : MonoBehaviour
             HitSound.Play();
             MonkeyLaughSound.Play(MLSoundDelay * 44100L);
         }
+    }
+
+    IEnumerator Waiting()
+    {
+        yield return new WaitForSeconds(3);
+        if (!moving) moving = true;
     }
 }

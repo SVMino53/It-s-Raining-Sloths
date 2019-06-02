@@ -18,6 +18,8 @@ public class HighScoreInitials : MonoBehaviour
     float BlinkingTime = 0.3f;
     [SerializeField]
     float ScrollCooldown = 0.5f;
+    [SerializeField]
+    int waitSec = 3;
 
     public long PlayerScore = 0L;
 
@@ -80,8 +82,7 @@ public class HighScoreInitials : MonoBehaviour
             gameObject.GetComponent<ScoreBoard>().AddHighScore(Initials, PlayerScore);
 
             DoDisable = true;
-
-            SceneManager.LoadScene("Menu Scene");
+            StartCoroutine(Waiting(waitSec)); 
         }
 
         if (CurrentBlinkingTime > BlinkingTime)
@@ -144,5 +145,11 @@ public class HighScoreInitials : MonoBehaviour
         }
 
         return Initials;
+    }
+
+    IEnumerator Waiting(int sec)
+    {
+        yield return new WaitForSeconds(sec);
+        SceneManager.LoadScene("Menu Scene");
     }
 }

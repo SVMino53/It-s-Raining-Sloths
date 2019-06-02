@@ -14,7 +14,7 @@ public class TreeTopPosition : MonoBehaviour
     void Start()
     {
         treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
-        treePosition = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreePosition();
+        treePosition = transform.position;
         transform.position = new Vector3(treePosition.x, treeHeight, treePosition.z);
     }
 }

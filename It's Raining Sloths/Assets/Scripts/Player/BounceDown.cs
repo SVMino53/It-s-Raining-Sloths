@@ -16,7 +16,7 @@ public class BounceDown : MonoBehaviour
     {
         speed = speedL;
         falling = fall;
-        GetComponent<GeneralMovement>().moving = false;
+        //GetComponent<GeneralMovement>().moving = false;
         GetComponent<ShakeScreen>().enabled = true;
         StartCoroutine(Falling());
     }

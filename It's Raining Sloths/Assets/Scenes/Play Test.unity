@@ -20896,7 +20896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793953426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.277843, y: -27.739326, z: 59.60784}
+  m_LocalPosition: {x: 33.277843, y: 0, z: 59.60784}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 904887715}
@@ -25599,7 +25599,7 @@ MonoBehaviour:
   DistanceFromPlayer: 30
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 4
+  spawnRate: 2.5
   treeHeight: 0
   spawner: {fileID: 1749746074}
   defaultTreeHeight: 70
@@ -25689,7 +25689,7 @@ MonoBehaviour:
   DistanceFromPlayer: 20
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 5
+  spawnRate: 4
   treeHeight: 0
   spawner: {fileID: 1749746074}
   defaultTreeHeight: 70
@@ -25705,7 +25705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18b27fcb866dd644912c6efcb096424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelLength: 120
+  LevelLength: 60
   TimeText: {fileID: 1165781198}
   ScoreTextObj: {fileID: 1850322958}
 --- !u!114 &1413052325
@@ -28440,7 +28440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6d5202434edb544a9178a1a4dd4344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.201
+  speed: 0.03
 --- !u!114 &1835343317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28516,6 +28516,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  PlayerBranchDistance: 0.2
   collisionBuffer: 10
 --- !u!114 &1835343321
 MonoBehaviour:
