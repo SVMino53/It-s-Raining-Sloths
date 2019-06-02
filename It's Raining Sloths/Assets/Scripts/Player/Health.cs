@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Health : MonoBehaviour
     GameObject SliderObj = null;
     [SerializeField]
     AudioSource Music = null;
+    [SerializeField]
+    string TransitionImageName = "White";
+    [SerializeField]
+    string DeathSceneName = "DeathScene";
 
     Move_Mouse Move_MouseComp = null;
     Rotate_Analog Rotate_AnalogComp = null;
@@ -62,11 +67,20 @@ public class Health : MonoBehaviour
             ArmsController_TestComp.enabled = false;
             ArmAnimationControllerComp.enabled = false;
 
-            ScoreTextObj.SetActive(true);
-            SystemsObj.SetActive(false);
-            Canvas_EyesObj.SetActive(false);
+            //ScoreTextObj.SetActive(true);
+            //SystemsObj.SetActive(false);
+            //Canvas_EyesObj.SetActive(false);
 
-            SliderObj.GetComponent<HeightBar>().enabled = false;
+            //SliderObj.GetComponent<HeightBar>().enabled = false;
+
+            GameObject TransitionImageObj = GameObject.Find(TransitionImageName);
+            ImageAlphaShading TransitionImageScript = TransitionImageObj.GetComponent<ImageAlphaShading>();
+            TransitionImageScript.enabled = true;
+
+            if (TransitionImageObj.GetComponent<Image>().color.a >= 1.0f)
+            {
+                SceneManager.LoadScene(DeathSceneName, LoadSceneMode.Single);
+            }
         }
     }
 
