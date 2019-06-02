@@ -24,7 +24,9 @@ public class SpawnSlothBaby : MonoBehaviour
     int slothLane;
     float testRotation;
 
-    GameObject sloth;
+    bool spawn = true;
+
+    GameObject player;
     GameObject obj;
     [SerializeField]
     float treeHeight;
@@ -39,8 +41,8 @@ public class SpawnSlothBaby : MonoBehaviour
         if (GameObject.Find(TreesName))
             treeHeight = GameObject.Find(TreesName).GetComponent<InitializeTrees>().GetTreeHeight();
         else treeHeight = defaultTreeHeight;
-        sloth = GameObject.FindGameObjectWithTag(PlayerTag);
-        slothLane = sloth.GetComponent<Rotate>().GetCurLane();
+        player = GameObject.FindGameObjectWithTag(PlayerTag);
+        slothLane = player.GetComponent<Rotate>().GetCurLane();
         startTime = Time.time;
     }
 
@@ -51,27 +53,27 @@ public class SpawnSlothBaby : MonoBehaviour
 
         int rnd  = Random.Range(0, Objs.Length);
         
-        obj = Instantiate<GameObject>(Objs[rnd], new Vector3(2.0f, spawner.transform.position.y/*sloth.transform.position.y + DistanceFromPlayer*/, 0.0f), ObjRotation);
+        obj = Instantiate<GameObject>(Objs[rnd], new Vector3(2.0f, spawner.transform.position.y, 0.0f), ObjRotation);
         obj.transform.RotateAround(new Vector3(0, transform.position.y, 0), new Vector3(0,1,0), -testRotation+90);
     }
 
     // Update is called once per frame 
     void Update()
     {
-        if (Time.time - startTime >= spawnRate)
+        if (Time.time - startTime >= spawnRate && spawn)
         {
-            if (sloth != null)
+            if (player != null)
             {
-                if (sloth.GetComponent<Rotate>().isActiveAndEnabled)
-                    slothLane = sloth.GetComponent<Rotate>().GetCurLane();
-                else slothLane = sloth.GetComponent<Rotate_Analog>().GetCurLane();
+                if (player.GetComponent<Rotate>().isActiveAndEnabled)
+                    slothLane = player.GetComponent<Rotate>().GetCurLane();
+                else slothLane = player.GetComponent<Rotate_Analog>().GetCurLane();
 
                 spawnLane = slothLane + Random.Range(-1, 2);
 
                 if (spawnLane < 0) spawnLane = numberOfLanes - 1;
                 if (spawnLane == numberOfLanes) spawnLane = 0;
 
-                if (sloth.transform.position.y > treeHeight - DistanceFromPlayer)
+                if (player.transform.position.y > treeHeight - DistanceFromPlayer)
                     Destroy(this);
                 if(Objs.Length > 0)
                     SpawnObject(spawnLane);
@@ -81,5 +83,18 @@ public class SpawnSlothBaby : MonoBehaviour
 
             //delete / get back to pool if sloth falls 
         }
+    }
+    public string GetPrefabName()
+    {
+        return obj.name;
+    }
+    public void SetSpawningStatus(bool sp)
+    {
+        spawn = sp;
+    }
+
+    public bool GetSpawningStatus()
+    {
+        return spawn;
     }
 }

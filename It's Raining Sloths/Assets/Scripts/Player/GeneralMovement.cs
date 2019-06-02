@@ -55,7 +55,7 @@ public class GeneralMovement : MonoBehaviour
             //
             moving = false;
             //
-            Waiting();
+            StartCoroutine(Waiting());
             GetComponent<BounceDown>().Bounce(speed);
             GetComponent<CollisionCheck>().SetColliding(false);
             

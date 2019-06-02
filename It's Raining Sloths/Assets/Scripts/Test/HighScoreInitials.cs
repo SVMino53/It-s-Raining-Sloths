@@ -15,6 +15,10 @@ public class HighScoreInitials : MonoBehaviour
     [SerializeField]
     KeyCode RightButton = KeyCode.G;
     [SerializeField]
+    KeyCode LeftButtonAlt = KeyCode.J;
+    [SerializeField]
+    KeyCode RightButtonAlt = KeyCode.K;
+    [SerializeField]
     float BlinkingTime = 0.3f;
     [SerializeField]
     float ScrollCooldown = 0.5f;
@@ -36,8 +40,8 @@ public class HighScoreInitials : MonoBehaviour
     {
         if(GlobalVars.SpecialMode)
         {
-            LeftButton = KeyCode.K;
-            RightButton = KeyCode.J;
+            LeftButton = LeftButtonAlt;
+            RightButton = RightButtonAlt;
         }
         PlayerScore = (long)GlobalVars.PlayerScore;
 

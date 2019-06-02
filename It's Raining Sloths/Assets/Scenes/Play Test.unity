@@ -2677,6 +2677,8 @@ MonoBehaviour:
   BlurSpeed: 0.01
   LeftRotateKey: 97
   RightRotateKey: 100
+  LeftRotateKeyAlt: 106
+  RightRotateKeyAlt: 107
   CurVelocity: 0
   CurDelay: 0
 --- !u!114 &337316477
@@ -30961,10 +30963,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1413052320}
   - component: {fileID: 1413052319}
+  - component: {fileID: 1413052323}
   - component: {fileID: 1413052318}
   - component: {fileID: 1413052321}
   - component: {fileID: 1413052322}
-  - component: {fileID: 1413052323}
   - component: {fileID: 1413052324}
   - component: {fileID: 1413052325}
   m_Layer: 0
@@ -31082,7 +31084,7 @@ MonoBehaviour:
   DistanceFromPlayer: 20
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 4
+  spawnRate: 3
   treeHeight: 0
   spawner: {fileID: 1749746074}
   defaultTreeHeight: 70
@@ -31116,6 +31118,7 @@ MonoBehaviour:
   particleLength: 1
   LeftArmName: Detector_Left
   RightArmName: Detector_Right
+  HeadName: Detector_Middle
 --- !u!1 &1424368617
 GameObject:
   m_ObjectHideFlags: 0
@@ -33834,6 +33837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.03
+  allowedStillTime: 5
 --- !u!114 &1835343317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34018,6 +34022,7 @@ MonoBehaviour:
   SliderObj: {fileID: 1755904253}
   Music: {fileID: 1363564713}
   TransitionImageName: White
+  DeathSceneName: DeathScene
   stars: {fileID: 1502720461}
 --- !u!114 &1835343327
 MonoBehaviour:
@@ -34034,6 +34039,7 @@ MonoBehaviour:
   particleLength: 6.46
   LeftArmName: Detector_Left
   RightArmName: Detector_Right
+  HeadName: Detector_Middle
 --- !u!114 &1835343328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35425,6 +35431,8 @@ MonoBehaviour:
   BlurSpeed: 0.01
   LeftRotateKey: 97
   RightRotateKey: 100
+  LeftRotateKeyAlt: 106
+  RightRotateKeyAlt: 107
   CurVelocity: 0
   CurDelay: 0
 --- !u!114 &2008218289
