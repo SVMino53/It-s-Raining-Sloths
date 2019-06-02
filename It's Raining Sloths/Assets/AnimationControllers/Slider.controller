@@ -9,8 +9,8 @@ AnimatorController:
   m_Name: Slider
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: ExecutionTime
-    m_Type: 1
+  - m_Name: Execute
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -36,8 +36,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: ExecutionTime
+  - m_ConditionMode: 1
+    m_ConditionEvent: Execute
     m_EventTreshold: 5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102787148321296018}

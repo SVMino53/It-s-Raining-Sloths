@@ -5,11 +5,16 @@ using UnityEngine;
 public class AnimationTimer : MonoBehaviour
 {
     [SerializeField]
-    string ParameterName = "ExecutionTime";
+    string ParameterName = "Execute";
+    [SerializeField]
+    float ExecutionTime = 0.0f;
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Animator>().SetFloat(ParameterName ,Time.timeSinceLevelLoad);
+        if (ExecutionTime <= Time.timeSinceLevelLoad)
+        {
+            GetComponent<Animator>().SetBool(ParameterName, true);
+        }
     }
 }
