@@ -31,7 +31,7 @@ public class CatchDetection : MonoBehaviour
 
             GlobalVars.SlothCount += nPointsForCatching;
 
-            if (GameObject.Find("Systems").GetComponent<Timer>())
+            if (GameObject.Find("Systems").GetComponent<Timer>() != null)
                 GameObject.Find("Systems").GetComponent<Timer>().AddToTime(TimeBonus);
 
             other.gameObject.GetComponent<SlothDestroyer>().Deactivate();

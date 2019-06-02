@@ -78,4 +78,21 @@ public class Rotate : MonoBehaviour
     {
         return curLane;
     }
+
+
+    public void SetButtons(KeyCode left, KeyCode right)
+    {
+        RotateLeft = left;
+        RotateRight = right;
+    }
+
+    public KeyCode GetLeft()
+    {
+        return RotateLeft;
+    }
+
+    public KeyCode GetRight()
+    {
+        return RotateRight;
+    }
 }

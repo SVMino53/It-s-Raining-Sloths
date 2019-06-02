@@ -6,6 +6,7 @@ public class ParticleController : MonoBehaviour
 {
     GameObject particleLeft;
     GameObject particleRight;
+    GameObject particleMiddle;
 
     float startTime = 0;
     [SerializeField]
@@ -14,24 +15,29 @@ public class ParticleController : MonoBehaviour
     string LeftArmName = "Detector_Left";
     [SerializeField]
     string RightArmName = "Detector_Right";
+    [SerializeField]
+    string HeadName = "Detector_Middle";
 
     void Start()
     {
         particleLeft = GameObject.Find("particles_l");
         particleRight = GameObject.Find("particles_r");
+        particleMiddle = GameObject.Find("particles_m");
 
         particleLeft.GetComponent<ParticleSystem>().Stop();
         particleRight.GetComponent<ParticleSystem>().Stop();
+        particleMiddle.GetComponent<ParticleSystem>().Stop();
     }
 
     void Update()
     {
-        if(particleLeft.GetComponent<ParticleSystem>().isPlaying || particleRight.GetComponent<ParticleSystem>().isPlaying) 
+        if(particleLeft.GetComponent<ParticleSystem>().isPlaying || particleRight.GetComponent<ParticleSystem>().isPlaying || particleMiddle.GetComponent<ParticleSystem>().isPlaying) 
         {
             if (Time.time - startTime > particleLength)
             {
                 particleLeft.GetComponent<ParticleSystem>().Stop();
                 particleRight.GetComponent<ParticleSystem>().Stop();
+                particleMiddle.GetComponent<ParticleSystem>().Stop();
             }
         } else
         {
@@ -43,12 +49,25 @@ public class ParticleController : MonoBehaviour
     {
         if(name == LeftArmName)
         {
-            particleLeft.GetComponent<ParticleSystem>().Play();
-            startTime = Time.time;
+            if (particleLeft != null)
+            {
+                particleLeft.GetComponent<ParticleSystem>().Play();
+                startTime = Time.time;
+            }
         } else if (name == RightArmName)
         {
-            particleRight.GetComponent<ParticleSystem>().Play();
-            startTime = Time.time;
+            if (particleRight != null)
+            {
+                particleRight.GetComponent<ParticleSystem>().Play();
+                startTime = Time.time;
+            }
+        } else if (name == HeadName)
+        {
+            if(particleMiddle != null)
+            {
+                particleMiddle.GetComponent<ParticleSystem>().Play();
+                startTime = Time.time;
+            }
         }
     }
 }

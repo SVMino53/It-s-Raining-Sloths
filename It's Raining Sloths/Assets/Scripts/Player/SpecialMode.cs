@@ -34,12 +34,19 @@ public class SpecialMode : MonoBehaviour
 
             GetComponent<ArmsController_Test>().enabled = false;
 
-            GetComponent<Rotate_Analog>().SetButtons(rotateLeft, rotateRight);
+            // GetComponent<Rotate_Analog>().SetButtons(rotateLeft, rotateRight);
+            GetComponent<Rotate_Analog>().enabled = false;
+            GetComponent<Rotate>().enabled = true;
+            GetComponent<Rotate>().SetButtons(rotateLeft, rotateRight);
+
         } else
         {
             if (detector_l) detector_l.SetActive(true);
             if (detector_r) detector_r.SetActive(true);
             if (detector_m) detector_m.SetActive(false);
+
+            GetComponent<Rotate_Analog>().enabled = true;
+            GetComponent<Rotate>().enabled = false;
         }
     }
 }

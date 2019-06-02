@@ -4917,7 +4917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73.7, y: 99.2}
+  m_AnchoredPosition: {x: -73.7, y: 163}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208855010
@@ -5607,7 +5607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6d5202434edb544a9178a1a4dd4344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.09
+  speed: 0.06
 --- !u!4 &1294682691
 Transform:
   m_ObjectHideFlags: 0
@@ -7038,7 +7038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 374, y: -218}
+  m_AnchoredPosition: {x: 354, y: -223}
   m_SizeDelta: {x: 355.2, y: 38.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1645481807
@@ -7061,7 +7061,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Press SMTH to skip
+  m_text: Press right button to skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7130,10 +7130,10 @@ MonoBehaviour:
   m_margin: {x: 1.450335, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1645481807}
-    characterCount: 18
+    characterCount: 26
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 4
+    wordCount: 5
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -8601,7 +8601,7 @@ PrefabInstance:
     - target: {fileID: 2372394630415162556, guid: 199f6c9066641da4093550a92c6caa8d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.20186
+      value: 45.77
       objectReference: {fileID: 0}
     - target: {fileID: 2372394630415162556, guid: 199f6c9066641da4093550a92c6caa8d,
         type: 3}

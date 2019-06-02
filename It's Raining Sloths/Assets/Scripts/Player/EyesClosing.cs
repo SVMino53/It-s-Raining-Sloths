@@ -31,7 +31,11 @@ public class EyesClosing : MonoBehaviour
     KeyCode LeftRotateKey = KeyCode.A;
     [SerializeField]
     KeyCode RightRotateKey = KeyCode.D;
-    
+    [SerializeField]
+    KeyCode LeftRotateKeyAlt = KeyCode.J;
+    [SerializeField]
+    KeyCode RightRotateKeyAlt = KeyCode.K;
+
 
     float PrevPosY;
     float CurPosY;
@@ -48,6 +52,12 @@ public class EyesClosing : MonoBehaviour
         PrevPosY = PlayerObj.transform.position.y;
 
         MainCamera = GameObject.Find(MainCameraName);
+
+        if(GlobalVars.SpecialMode)
+        {
+            LeftRotateKey = LeftRotateKeyAlt;
+            RightRotateKey = RightRotateKeyAlt;
+        }
     }
 
     // Update is called once per frame

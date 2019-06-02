@@ -10,8 +10,6 @@ public class TextController : MonoBehaviour
 {
     [SerializeField]
     KeyCode SkipButton = KeyCode.J;
-    [SerializeField]
-    TextMeshProUGUI SkipText;
 
     [SerializeField]
     TextMeshProUGUI ClimbText;
@@ -66,12 +64,12 @@ public class TextController : MonoBehaviour
 
     void Start()
     {
-        if (!GlobalVars.SpecialMode)
-            SkipText.text = "Press 'Skip' to skip the tutorial";
-        else {
-            //change skip button
-            SkipText.text = "Press SMTH to skip the tutorial";
-        }
+        //if (!GlobalVars.SpecialMode)
+        //    SkipText.text = "Press 'Skip' to skip the tutorial";
+        //else {
+        //    //change skip button
+        //    SkipText.text = "Press SMTH to skip the tutorial";
+        //}
 
         ClimbText.text = ClimbStr;
 
@@ -84,14 +82,20 @@ public class TextController : MonoBehaviour
         else Debug.Log("Add 2 press button images");
 
         player = GameObject.Find("Player");
-        rotateLeft = player.GetComponent<Rotate_Analog>().GetLeft();
-        rotateRight = player.GetComponent<Rotate_Analog>().GetRight();
-        player.GetComponent<Rotate_Analog>().enabled = false;
 
         if (GlobalVars.SpecialMode) {
             RotateStr = RotateStrAlt;
             CatchStr = CatchStrAlt;
-            SkipButton = KeyCode.A;
+            SkipButton = KeyCode.D;
+            rotateLeft = player.GetComponent<Rotate>().GetLeft();
+            rotateRight = player.GetComponent<Rotate>().GetRight();
+            player.GetComponent<Rotate>().enabled = false;
+            player.GetComponent<Rotate_Analog>().enabled = false;
+        } else
+        {
+            rotateLeft = player.GetComponent<Rotate_Analog>().GetLeft();
+            rotateRight = player.GetComponent<Rotate_Analog>().GetRight();
+            player.GetComponent<Rotate_Analog>().enabled = false;
         }
     }
 
@@ -153,7 +157,12 @@ public class TextController : MonoBehaviour
         {
             CatchText.text = "";
             GoodJobText.text = GoodJobStr;
-            player.GetComponent<Rotate_Analog>().enabled = false;
+
+            if(GlobalVars.SpecialMode)
+                player.GetComponent<Rotate>().enabled = false;
+            else
+                player.GetComponent<Rotate_Analog>().enabled = false;
+
             if (catchImage.Length == 2)
             {
                 catchImage[0].enabled = false;
@@ -180,10 +189,10 @@ public class TextController : MonoBehaviour
         }
         else if (climbFinished)
         {
-            
             ClimbText.text = "";
             RotateText.text = RotateStr;
-            player.GetComponent<Rotate_Analog>().enabled = true;
+            if(GlobalVars.SpecialMode) player.GetComponent<Rotate>().enabled = true;
+            else player.GetComponent<Rotate_Analog>().enabled = true;
             player.GetComponent<GeneralMovement>().moving = false;
             if(!GlobalVars.SpecialMode)
                 rotateImage.enabled = true;
