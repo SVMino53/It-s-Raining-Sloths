@@ -14,6 +14,8 @@ public class CatchDetection : MonoBehaviour
     GameObject PlusTenObj = null;
     [SerializeField]
     string CanvasName = "Canvas_MainGame";
+    [SerializeField]
+    AudioSource SlothSound = null;
 
     bool isActive = false;
     GameObject player;
@@ -41,6 +43,8 @@ public class CatchDetection : MonoBehaviour
             other.gameObject.GetComponent<SlothDestroyer>().Deactivate();
 
             Instantiate(PlusTenObj, GameObject.Find(CanvasName).transform);
+
+            SlothSound.Play();
 
             //Destroy(other.gameObject);
         } 
