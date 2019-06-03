@@ -38,7 +38,8 @@ public class ChallengeRegulator : MonoBehaviour
         {
             nextHeight += partHeight;
             GetComponent<SpawnSlothBaby>().ChangeSpawnRate(multiplyerSloths);
-            rockSpawner.GetComponent<SpawnSlothBaby>().ChangeSpawnRate(multiplyerRocks);
+            if(rockSpawner)
+                rockSpawner.GetComponent<SpawnSlothBaby>().ChangeSpawnRate(multiplyerRocks);
         }
     }
 }
