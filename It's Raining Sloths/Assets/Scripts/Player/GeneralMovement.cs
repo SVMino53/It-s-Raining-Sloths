@@ -92,7 +92,7 @@ public class GeneralMovement : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.5f);
         if (!moving) moving = true;
     }
 }
