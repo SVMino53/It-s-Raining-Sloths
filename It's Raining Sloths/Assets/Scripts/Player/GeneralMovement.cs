@@ -25,6 +25,8 @@ public class GeneralMovement : MonoBehaviour
     ulong MLSoundDelay = 3L;
     [SerializeField]
     float defaultTreeHeight = 70;
+    [SerializeField]
+    AudioSource DizzySound = null;
 
     /*...........*/
     float minHeight;
@@ -84,6 +86,7 @@ public class GeneralMovement : MonoBehaviour
             other.gameObject.SetActive(false);
             HitSound.Play();
             MonkeyLaughSound.Play(MLSoundDelay * 44100L);
+            DizzySound.Play();
         }
     }
 
