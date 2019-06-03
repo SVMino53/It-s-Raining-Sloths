@@ -8,7 +8,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField]
-    float LevelLength = 120.0f;
+    public float LevelLength = 120.0f;
     [SerializeField]
     TextMeshProUGUI TimeText;
     [SerializeField]
@@ -56,11 +56,6 @@ public class Timer : MonoBehaviour
         }
         Seconds = GlobalVars.GameTime % 60;
         Minutes = GlobalVars.GameTime / 60;
-
-        //if(Time.time - StartTime>=LevelLength)
-        //{
-        //    GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().countPoints(GetTimeLeft());
-        //}d
 
         if (Seconds >= 10)
         {

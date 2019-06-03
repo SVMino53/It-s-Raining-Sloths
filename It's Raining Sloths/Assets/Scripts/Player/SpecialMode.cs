@@ -38,6 +38,8 @@ public class SpecialMode : MonoBehaviour
             GetComponent<Rotate_Analog>().enabled = false;
             GetComponent<Rotate>().enabled = true;
             GetComponent<Rotate>().SetButtons(rotateLeft, rotateRight);
+            if(GameObject.Find("Systems").GetComponent<Timer>())
+                GameObject.Find("Systems").GetComponent<Timer>().LevelLength = 60;
 
         } else
         {

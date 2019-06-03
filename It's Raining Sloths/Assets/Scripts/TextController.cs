@@ -64,13 +64,6 @@ public class TextController : MonoBehaviour
 
     void Start()
     {
-        //if (!GlobalVars.SpecialMode)
-        //    SkipText.text = "Press 'Skip' to skip the tutorial";
-        //else {
-        //    //change skip button
-        //    SkipText.text = "Press SMTH to skip the tutorial";
-        //}
-
         ClimbText.text = ClimbStr;
 
         rotateImage.enabled = false;
