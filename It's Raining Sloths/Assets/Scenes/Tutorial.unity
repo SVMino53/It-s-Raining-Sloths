@@ -709,7 +709,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115815993}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f6e3657b3bbbd004e8ef7f585554ff4d, type: 2}
   m_CullingMode: 0
@@ -1242,6 +1242,7 @@ Transform:
   - {fileID: 663972544}
   - {fileID: 1940841826}
   - {fileID: 1141076514}
+  - {fileID: 1352893624}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3895,8 +3896,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
   TimeBonus: 10
-  PlusTenObj: {fileID: 0}
-  CanvasName: Canvas_MainGame
+  PlusTenObj: {fileID: 2211224006079835254, guid: d085157b31d3b904d8c37f8ba8b654b4,
+    type: 3}
+  CanvasName: Canvas
+  SlothSound: {fileID: 1352893625}
 --- !u!23 &906181865
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5808,8 +5811,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
   TimeBonus: 10
-  PlusTenObj: {fileID: 0}
+  PlusTenObj: {fileID: 2211224006079835254, guid: de77505248292b049b1d03dc3423d770,
+    type: 3}
   CanvasName: Canvas_MainGame
+  SlothSound: {fileID: 1352893625}
 --- !u!65 &1313970025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5874,6 +5879,133 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 254269526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1352893623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1352893624}
+  - component: {fileID: 1352893625}
+  m_Layer: 0
+  m_Name: SlothScream
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1352893624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352893623}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 279064885}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1352893625
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352893623}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2d3f3fa038e25494784c730cfa5b5136, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1362773231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7786,8 +7918,7 @@ MonoBehaviour:
   catchImage:
   - {fileID: 1684916917}
   - {fileID: 1288002628}
-  GoodJobText: {fileID: 649860486}
-  GoodJobStr: GOOD JOB!
+  GoodJobImageName: Image_GoodJob
   delayTime: 2
   rockPrefab: {fileID: 8776726110610763589, guid: d9bf21df35f79ed418e950ff237ca33c,
     type: 3}
@@ -8274,8 +8405,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
   TimeBonus: 10
-  PlusTenObj: {fileID: 0}
-  CanvasName: Canvas_MainGame
+  PlusTenObj: {fileID: 2211224006079835254, guid: 5ef7883c844e568439f5fb4d34ce7654,
+    type: 3}
+  CanvasName: Canvas
+  SlothSound: {fileID: 1352893625}
 --- !u!65 &1836000069
 BoxCollider:
   m_ObjectHideFlags: 0

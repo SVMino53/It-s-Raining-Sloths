@@ -36,10 +36,13 @@ public class TextController : MonoBehaviour
     [SerializeField]
     Image[] catchImage;
 
+    //[SerializeField]
+    //TextMeshProUGUI GoodJobText;
+    //[SerializeField]
+    //string GoodJobStr = "GOOD JOB!";
+
     [SerializeField]
-    TextMeshProUGUI GoodJobText;
-    [SerializeField]
-    string GoodJobStr = "GOOD JOB!";
+    string GoodJobImageName = "Image_GoodJob";
 
     [SerializeField]
     float delayTime = 2f;
@@ -53,6 +56,7 @@ public class TextController : MonoBehaviour
     string NextSceneName = "Play Test";
 
     GameObject player;
+    GameObject GoodJobImageObj;
 
     KeyCode rotateRight;
     KeyCode rotateLeft;
@@ -90,6 +94,9 @@ public class TextController : MonoBehaviour
             rotateRight = player.GetComponent<Rotate_Analog>().GetRight();
             player.GetComponent<Rotate_Analog>().enabled = false;
         }
+
+        GoodJobImageObj = GameObject.Find(GoodJobImageName);
+        GoodJobImageObj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -123,9 +130,9 @@ public class TextController : MonoBehaviour
             }
         }
 
-        if(GoodJobText.text == GoodJobStr)
+        if(GoodJobImageObj.activeSelf)
         {
-            StartCoroutine(Wait(GoodJobStr));
+            StartCoroutine(Wait(""));
         }
     }
 
@@ -136,7 +143,7 @@ public class TextController : MonoBehaviour
         if (smth == ClimbStr) climbFinished = true;
         else if (smth == RotateStr) rotateFinished = true;
         else if (smth == CatchStr) catchFinished = true;
-        else if (smth == GoodJobStr) goodjobFinished = true;
+        else if (GoodJobImageObj.activeSelf) goodjobFinished = true;
         Reset();
     }
 
@@ -149,9 +156,9 @@ public class TextController : MonoBehaviour
         } else if (catchFinished)
         {
             CatchText.text = "";
-            GoodJobText.text = GoodJobStr;
+            GoodJobImageObj.SetActive(true);
 
-            if(GlobalVars.SpecialMode)
+            if (GlobalVars.SpecialMode)
                 player.GetComponent<Rotate>().enabled = false;
             else
                 player.GetComponent<Rotate_Analog>().enabled = false;
