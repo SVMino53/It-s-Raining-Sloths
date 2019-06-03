@@ -28,7 +28,6 @@ public class SpawnSlothBaby : MonoBehaviour
 
     GameObject player;
     GameObject obj;
-    [SerializeField]
     float treeHeight;
     [SerializeField]
     GameObject spawner;
@@ -87,6 +86,11 @@ public class SpawnSlothBaby : MonoBehaviour
     public string GetPrefabName()
     {
         return obj.name;
+    }
+
+    public void ChangeSpawnRate(float mult)
+    {
+        spawnRate *= mult;
     }
     public void SetSpawningStatus(bool sp)
     {

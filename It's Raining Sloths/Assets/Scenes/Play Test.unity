@@ -698,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.3, y: 1.9}
+  m_AnchoredPosition: {x: 0.29999924, y: 1.8999996}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120861216
@@ -14408,6 +14408,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 461395421}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &466737625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 466737626}
+  - component: {fileID: 466737627}
+  m_Layer: 0
+  m_Name: RockSp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &466737626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466737625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1413052320}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &466737627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466737625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4363ad7ba7b526f4c9d0106ec6173567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objs:
+  - {fileID: 8776726110610763589, guid: d9bf21df35f79ed418e950ff237ca33c, type: 3}
+  numberOfLanes: 5
+  DistanceFromPlayer: 30
+  TreesName: Trees
+  PlayerTag: Player
+  spawnRate: 2.5
+  spawner: {fileID: 1749746074}
+  defaultTreeHeight: 70
 --- !u!4 &470433037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 59a3438b7c716f04d9bfefc9e28a4f6d,
@@ -31470,6 +31522,7 @@ GameObject:
   - component: {fileID: 1413052322}
   - component: {fileID: 1413052324}
   - component: {fileID: 1413052325}
+  - component: {fileID: 1413052326}
   m_Layer: 0
   m_Name: Systems
   m_TagString: System
@@ -31484,7 +31537,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413052317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4363ad7ba7b526f4c9d0106ec6173567, type: 3}
   m_Name: 
@@ -31496,7 +31549,6 @@ MonoBehaviour:
   TreesName: Trees
   PlayerTag: Player
   spawnRate: 2.5
-  treeHeight: 0
   spawner: {fileID: 1749746074}
   defaultTreeHeight: 70
 --- !u!114 &1413052319
@@ -31534,7 +31586,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 466737626}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31585,8 +31638,7 @@ MonoBehaviour:
   DistanceFromPlayer: 20
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 1
-  treeHeight: 0
+  spawnRate: 1.5
   spawner: {fileID: 1749746074}
   defaultTreeHeight: 70
 --- !u!114 &1413052324
@@ -31623,6 +31675,21 @@ MonoBehaviour:
   LeftArmName: Detector_Left
   RightArmName: Detector_Right
   HeadName: Detector_Middle
+--- !u!114 &1413052326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413052317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eac86e5ee2653244aee98cf2b09315d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplyerRocks: 1.5
+  multiplyerSloths: 1.5
+  stepPerc: 1
 --- !u!1 &1424368617
 GameObject:
   m_ObjectHideFlags: 0
@@ -34456,7 +34523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294617b2d1a3bb849b90342cb4083d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.39
+  speed: 0.34
   MoveUp: 119
   MoveDown: 115
 --- !u!4 &1835343318
