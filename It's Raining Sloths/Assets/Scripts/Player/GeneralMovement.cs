@@ -58,7 +58,7 @@ public class GeneralMovement : MonoBehaviour
             moving = false;
             //
             StartCoroutine(Waiting());
-            GetComponent<BounceDown>().Bounce(speed);
+            GetComponent<BounceDown>().Bounce(0.2f);
             GetComponent<CollisionCheck>().SetColliding(false);
             
             //GetComponent<Health>().Decrease();
@@ -85,7 +85,7 @@ public class GeneralMovement : MonoBehaviour
             GetComponent<Health>().Decrease();
             other.gameObject.SetActive(false);
             HitSound.Play();
-            MonkeyLaughSound.Play(MLSoundDelay * 44100L);
+            MonkeyLaughSound.PlayDelayed(MLSoundDelay);
             DizzySound.Play();
         }
     }

@@ -55,7 +55,7 @@ public class CollisionCheck : MonoBehaviour
                     out direction, out distance
                 );
                 //
-                direction = new Vector3(0, direction.y, 0);
+                direction = new Vector3(0, -1.0f, 0);
                 //
                 if (overlapped)
                 {
