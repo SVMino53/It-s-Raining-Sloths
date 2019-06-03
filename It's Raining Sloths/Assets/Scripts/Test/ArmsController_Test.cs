@@ -34,25 +34,36 @@ public class ArmsController_Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(CatchRight))
+        if (!armActive)
         {
-            rightArm.SetActive(true);
-            timer = Time.time;
-        }
+            if (Input.GetKey(CatchRight))
+            {
+                rightArm.SetActive(true);
+                armActive = true;
+                timer = Time.time;
+            }
 
-        if (Input.GetKey(CatchLeft))
-        {
-            leftArm.SetActive(true);
-            timer = Time.time;
+            if (Input.GetKey(CatchLeft))
+            {
+                leftArm.SetActive(true);
+                armActive = true;
+                timer = Time.time;
+            }
         }
 
         if (Time.time - timer >= activePhaseLength)
         {
             if (leftArm.activeInHierarchy)
+            {
                 leftArm.SetActive(false);
+                armActive = false;
+            }
 
             if (rightArm.activeInHierarchy)
+            {
                 rightArm.SetActive(false);
+                armActive = false;
+            }
             
             timer = Time.time;
         }
