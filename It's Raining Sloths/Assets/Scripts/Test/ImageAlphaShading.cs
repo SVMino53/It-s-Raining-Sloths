@@ -15,6 +15,8 @@ public class ImageAlphaShading : MonoBehaviour
     [SerializeField]
     [Range(0.0f, 1.0f)]
     float EndAlpha = 1.0f;
+    [SerializeField]
+    bool DeleteAtEnd = false;
 
     Color NewColor = new Color();
     float NewAlpha = 0.0f;
@@ -31,8 +33,13 @@ public class ImageAlphaShading : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeSinceLevelLoad >= StartDelay && GetComponent<Image>().color.a < EndAlpha && EndAlpha > StartAlpha ||
-            Time.timeSinceLevelLoad >= StartDelay && GetComponent<Image>().color.a > EndAlpha && EndAlpha < StartAlpha)
+        if (StartDelay > 0.0f)
+        {
+            StartDelay -= Time.deltaTime;
+        }
+
+        if (StartDelay <= 0 && GetComponent<Image>().color.a < EndAlpha && EndAlpha > StartAlpha ||
+            StartDelay <= 0 && GetComponent<Image>().color.a > EndAlpha && EndAlpha < StartAlpha)
         {
             float AddAlpha = (EndAlpha - StartAlpha) / ShadingTime * Time.deltaTime;
             NewAlpha += AddAlpha;
@@ -42,6 +49,10 @@ public class ImageAlphaShading : MonoBehaviour
 
         if (IsDone())
         {
+            if (DeleteAtEnd)
+            {
+                Destroy(gameObject);
+            }
             enabled = false;
         }
     }

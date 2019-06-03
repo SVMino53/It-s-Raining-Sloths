@@ -10,6 +10,10 @@ public class CatchDetection : MonoBehaviour
     int nPointsForCatching = 1;
     [SerializeField]
     float TimeBonus = 10;
+    [SerializeField]
+    GameObject PlusTenObj = null;
+    [SerializeField]
+    string CanvasName = "Canvas_MainGame";
 
     bool isActive = false;
     GameObject player;
@@ -35,6 +39,8 @@ public class CatchDetection : MonoBehaviour
                 GameObject.Find("Systems").GetComponent<Timer>().AddToTime(TimeBonus);
 
             other.gameObject.GetComponent<SlothDestroyer>().Deactivate();
+
+            Instantiate(PlusTenObj, GameObject.Find(CanvasName).transform);
 
             //Destroy(other.gameObject);
         } 

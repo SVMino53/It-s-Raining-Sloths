@@ -13,25 +13,46 @@ public class Timer : MonoBehaviour
     TextMeshProUGUI TimeText;
     [SerializeField]
     GameObject ScoreTextObj = null;
+    [SerializeField]
+    string PlayerName = "Player";
+    [SerializeField]
+    string TimesUpName = "Image_Time'sUp";
+    [SerializeField]
+    float TimesUpDuration = 2.0f;
 
     float StartTime;
     int Seconds = 0;
     int Minutes = 0;
+
+    GameObject TimesUpObj = null;
 
     bool playerReachedTheTop = false;
     // Start is called before the first frame update
     void Start()
     {
         StartTime = Time.time;
+        TimesUpObj = GameObject.Find(TimesUpName);
+        TimesUpObj.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        GlobalVars.GameTime = (int)GetTimeLeft();
-        if (GlobalVars.GameTime == 0)
+        if (GlobalVars.GameTime > 0)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().SetLives(0);
+            GlobalVars.GameTime = (int)GetTimeLeft();
+        }
+        else
+        {
+            TimesUpObj.SetActive(true);
+
+            TimesUpDuration -= Time.deltaTime;
+
+            if (TimesUpDuration <= 0.0f)
+            {
+                GameObject.Find(PlayerName).GetComponent<Health>().SetLives(0);
+                enabled = false;
+            }
         }
         Seconds = GlobalVars.GameTime % 60;
         Minutes = GlobalVars.GameTime / 60;
