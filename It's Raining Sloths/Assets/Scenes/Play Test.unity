@@ -14130,7 +14130,7 @@ MonoBehaviour:
   DistanceFromPlayer: 30
   TreesName: Trees
   PlayerTag: Player
-  spawnRate: 2.5
+  spawnRate: 3
   spawner: {fileID: 1749746074}
   defaultTreeHeight: 70
 --- !u!4 &470433037 stripped
@@ -31188,8 +31188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eac86e5ee2653244aee98cf2b09315d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplyerRocks: 0.66
-  multiplyerSloths: 1.5
+  multiplyerRocks: 0.6
+  multiplyerSloths: 1.7
   stepPerc: 25
 --- !u!1 &1424368617
 GameObject:
@@ -34010,7 +34010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6d5202434edb544a9178a1a4dd4344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
+  speed: 0.05
   allowedStillTime: 5
 --- !u!114 &1835343317
 MonoBehaviour:
