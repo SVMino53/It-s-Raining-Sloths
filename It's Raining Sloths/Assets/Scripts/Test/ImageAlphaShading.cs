@@ -17,6 +17,8 @@ public class ImageAlphaShading : MonoBehaviour
     float EndAlpha = 1.0f;
     [SerializeField]
     bool DeleteAtEnd = false;
+    [SerializeField]
+    bool Loop = false;
 
     Color NewColor = new Color();
     float NewAlpha = 0.0f;
@@ -49,11 +51,20 @@ public class ImageAlphaShading : MonoBehaviour
 
         if (IsDone())
         {
-            if (DeleteAtEnd)
+            if (DeleteAtEnd && !Loop)
             {
                 Destroy(gameObject);
             }
-            enabled = false;
+            else if (Loop)
+            {
+                float PrevStartAlpha = StartAlpha;
+                StartAlpha = EndAlpha;
+                EndAlpha = PrevStartAlpha;
+            }
+            else
+            {
+                enabled = false;
+            }
         }
     }
 

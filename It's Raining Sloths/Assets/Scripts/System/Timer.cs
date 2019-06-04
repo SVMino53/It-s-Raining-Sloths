@@ -19,10 +19,13 @@ public class Timer : MonoBehaviour
     string TimesUpName = "Image_Time'sUp";
     [SerializeField]
     float TimesUpDuration = 2.0f;
+    [SerializeField]
+    AudioSource TimesUpAlarm = null;
 
     float StartTime;
     int Seconds = 0;
     int Minutes = 0;
+    bool TimesUpAlarmPlayed = false;
 
     GameObject TimesUpObj = null;
 
@@ -45,6 +48,12 @@ public class Timer : MonoBehaviour
         else
         {
             TimesUpObj.SetActive(true);
+
+            if (!TimesUpAlarmPlayed)
+            {
+                TimesUpAlarm.Play();
+                TimesUpAlarmPlayed = true;
+            }
 
             TimesUpDuration -= Time.deltaTime;
 
