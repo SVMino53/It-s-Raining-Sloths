@@ -25772,7 +25772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
-  TimeBonus: 10
+  TimeBonus: 5
   PlusTenObj: {fileID: 2211224006079835254, guid: 5ef7883c844e568439f5fb4d34ce7654,
     type: 3}
   CanvasName: Canvas_MainGame
@@ -31521,7 +31521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
-  TimeBonus: 10
+  TimeBonus: 5
   PlusTenObj: {fileID: 2211224006079835254, guid: d085157b31d3b904d8c37f8ba8b654b4,
     type: 3}
   CanvasName: Canvas_MainGame
@@ -32343,7 +32343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nPointsForCatching: 1
-  TimeBonus: 10
+  TimeBonus: 5
   PlusTenObj: {fileID: 2211224006079835254, guid: de77505248292b049b1d03dc3423d770,
     type: 3}
   CanvasName: Canvas_MainGame
