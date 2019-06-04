@@ -26,6 +26,7 @@ public class ArmAnimationController : MonoBehaviour
     float CurrentReachTime = 0.0f;
     bool LeftReach = false;
     bool RightReach = false;
+    bool ArmActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,22 +52,31 @@ public class ArmAnimationController : MonoBehaviour
         RightArmAnimator.SetFloat("NormalTime", AnimTime);
         LeftArmAnimator.SetFloat("NormalTime", AnimTime);
 
-        if (Input.GetKey(CatchRight))
+        if (Input.GetKey(CatchRight) && !ArmActive ||
+            Input.GetKey(CatchRight) && RightReach)
         {
             RightReach = true;
             LeftReach = false;
             CurrentReachTime = ReachTime;
+            ArmActive = true;
         }
-        else if (Input.GetKey(CatchLeft))
+
+        if (Input.GetKey(CatchLeft) && !ArmActive ||
+            Input.GetKey(CatchLeft) && LeftReach)
         {
             LeftReach = true;
             RightReach = false;
             CurrentReachTime = ReachTime;
+            ArmActive = true;
         }
 
         if (CurrentReachTime > 0.0f)
         {
             CurrentReachTime -= Time.deltaTime;
+        }
+        else
+        {
+            ArmActive = false;
         }
 
         if (RightReach && CurrentReachTime > 0.0f)

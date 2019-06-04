@@ -20,7 +20,8 @@ public class Move_Mouse : MonoBehaviour
             return;
         } 
         float YMovement = -Input.GetAxis("Mouse X") * speed;
-        if (YMovement < speed * -1.5) YMovement = speed * 1.5f;
+        if (YMovement < speed * -1.5f) YMovement = speed * 1.5f;
+        if (YMovement > speed * 7.5f) YMovement = speed * 7.5f;
 
         if (!GameObject.Find("Systems").GetComponent<SpawnSlothBaby>().GetSpawningStatus()) { GameObject.Find("Systems").GetComponent<SpawnSlothBaby>().SetSpawningStatus(true); timer = 0; }
         GetComponent<GeneralMovement>().SetSpeed(Mathf.Abs(YMovement));
